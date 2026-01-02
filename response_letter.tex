@@ -67,6 +67,7 @@
     \vspace{0.1cm}
 }
 
+\makeatletter
 \newcommand{\AutoRevision}[1]{%
     \begin{tcolorbox}[
         enhanced, breakable,
@@ -78,26 +79,36 @@
         \textbf{\textcolor{blue!40!black}{Revisions in Manuscript:}}
         
         \global\def\RevPrintedList{}
-        \renewcommand{\do}[1]{%
-            \edef\RevHash{%
-                \ifdefined\pdfmdfivesum
-                    \pdfmdfivesum{\detokenize\expandafter{\Paste{text:##1}}}%
-                \else
-                    ##1%
-                \fi
-            }%
-            \ifinlist{\RevHash}{\RevPrintedList}{%
-            }{%
-                \listgadd{\RevPrintedList}{\RevHash}%
-                \par\vspace{0.3cm}
-                {\small\bfseries\color{blue!60!black} $\hookrightarrow$ Section \ref{rev:##1}, Page \pageref{rev:##1}:}
-                \par\nopagebreak
-                \itshape\small ``\Paste{text:##1}''%
-            }%
-        }
+        \def\do##1{%
+            % Trim spaces
+            \begingroup
+            \edef\x{\endgroup
+                \noexpand\ProcessRevision{##1}%
+            }\x
+        }%
         \docsvlist{#1}
     \end{tcolorbox}
 }
+
+\newcommand{\ProcessRevision}[1]{%
+    \edef\RevHash{%
+        \ifdefined\pdfmdfivesum
+            \pdfmdfivesum{\detokenize\expandafter{\Paste{text:#1}}}%
+        \else
+            #1%
+        \fi
+    }%
+    \xifinlist{\RevHash}{\RevPrintedList}{%
+        % Already printed, skip
+    }{%
+        \listgadd{\RevPrintedList}{\RevHash}%
+        \par\vspace{0.3cm}
+        {\small\bfseries\color{blue!60!black} $\hookrightarrow$ Section \ref{rev:#1}, Page \pageref{rev:#1}:}
+        \par\nopagebreak
+        \itshape\small ``\Paste{text:#1}''%
+    }%
+}
+\makeatother
 
 \newcommand{\NoRevision}{%
     \begin{tcolorbox}[
@@ -128,6 +139,9 @@ We sincerely thank all reviewers for their thorough and constructive feedback. W
 
 \vspace{1em}
 
+\noindent
+\textbf{Summary:} We have carefully addressed all reviewer comments through manuscript revisions, expanded discussions, and acknowledgments of limitations. Key changes include: (1) substantial revision of Section 2 for clearer problem definition and motivation, (2) comprehensive grammatical and formatting corrections, (3) expanded Future Work with detailed discussions of experimental directions, (4) explicit acknowledgment of statistical validation limitations, (5) clarification of competitive performance value, and (6) improved reproducibility package. We believe these revisions have significantly strengthened the manuscript.
+
 % ==============================================================================
 % REVIEWER 1
 % ==============================================================================
@@ -141,19 +155,19 @@ We sincerely thank all reviewers for their thorough and constructive feedback. W
 \begin{ReviewCycle}{Comment 1.1}
     \ReviewerText{In Section 5.4 (lines 955--970), the paper discusses the training process by only mentioning starting and ending loss values. It would be more helpful to reference the figures before starting the discussion or include loss curves at the same page to improve reading flow.}
     \AuthorResponse{We thank the reviewer for this valuable suggestion. We agree that explicitly referencing the convergence figures improves both clarity and flow. We have revised the Training Dynamics Analysis section to include explicit references to Figures 3 and 4 at the beginning of the discussion.}
-    \AutoRevision{1.5,4.11}
+    \AutoRevision{1.5}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 1.2}
     \ReviewerText{Potential improvements include experimenting with pretrained embeddings or learned node features instead of one-hot encodings, testing different PCA dimensionalities, and conducting ablations for hyperparameters such as projection dimension D, fusion weight $\lambda$, margin m, and training epochs.}
     \AuthorResponse{We thank the reviewer for these thoughtful suggestions. We fully acknowledge the value of these ablation studies and sensitivity analyses. Due to computational resource and time constraints, we were unable to conduct comprehensive hyperparameter exploration in this revision. However, we have now explicitly discussed these directions in the expanded Future Work section.}
-    \AutoRevision{1.6,2.3,2.7,3.7}
+    \AutoRevision{1.6}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 1.3}
     \ReviewerText{Grammatical issues: GCN used before definition, keyword capitalization, ``ie.'' format, duplicated ``for example for example'', missing commas, and ``token id's'' formatting.}
     \AuthorResponse{We thank the reviewer for bringing these issues to our attention. We have systematically corrected all mentioned errors throughout the manuscript.}
-    \AutoRevision{4.5,4.6,3.6,1.3,1.7,4.8,4.9}
+    \AutoRevision{4.5,4.6,3.6,1.7,4.9}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 1.4}
@@ -176,25 +190,25 @@ We sincerely thank all reviewers for their thorough and constructive feedback. W
 \begin{ReviewCycle}{Comment 2.1}
     \ReviewerText{The paper claims to address ``label-scarce'' environments but uses full datasets. Experiments with reduced training set sizes (5\% or 10\% of labeled data) are needed.}
     \AuthorResponse{We thank the reviewer for this important observation. We acknowledge that our current experiments do not directly validate performance under extreme label scarcity. While the graph-based framework is designed to leverage unlabeled data, we agree that experiments with systematically reduced label budgets would provide stronger evidence. Due to time and computational constraints, we could not complete these experiments for this revision. We have added this explicitly to the Future Work section.}
-    \AutoRevision{2.1,2.5}
+    \AutoRevision{2.1}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 2.2}
     \ReviewerText{Table 4 reports only training time overhead. Inference latency metrics must be provided to support scalability claims.}
     \AuthorResponse{We thank the reviewer for this valuable point. We agree that inference latency measurements would strengthen RQ2. We have clarified that the GNN is discarded at inference time and added quantitative inference benchmarking as future work.}
-    \AutoRevision{2.2,2.6}
+    \AutoRevision{2.2}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 2.3}
     \ReviewerText{The PCA dimensionality reduction from 768 to d=10 appears arbitrary. Sensitivity analysis should be conducted.}
     \AuthorResponse{We thank the reviewer for raising this concern. We acknowledge that d=10 was empirically motivated but not systematically validated. Due to computational constraints, we have expanded the Future Work section to explicitly highlight the need for PCA dimensionality sensitivity analysis.}
-    \AutoRevision{2.3,2.7,3.7}
+    \AutoRevision{2.3}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 2.4}
     \ReviewerText{Table 5 shows the method provides no concrete benefit over baselines; results are identical or slightly worse.}
     \AuthorResponse{We thank the reviewer for this observation. We respectfully emphasize that our goal is to demonstrate that a novel graph-enhanced semi-supervised framework can achieve \emph{competitive} performance while explicitly leveraging unlabeled data. Achieving F1 scores that match or closely approximate state-of-the-art models validates the architectural concept. We have added a paragraph emphasizing this perspective.}
-    \AutoRevision{2.4,2.8}
+    \AutoRevision{2.4}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 2.5}
@@ -222,25 +236,25 @@ We thank the reviewer for the detailed evaluation and constructive criticism.
 \begin{ReviewCycle}{Comment 3.1}
     \ReviewerText{Graph edges use only titles. Ignoring descriptions may discard important relationships.}
     \AuthorResponse{We thank the reviewer for this insightful observation. We fully agree that descriptions could yield richer structures. Our choice was motivated by computational efficiency. We have expanded Future Work to discuss incorporating descriptions.}
-    \AutoRevision{3.3,4.3}
+    \AutoRevision{3.3}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 3.2}
     \ReviewerText{PCA reduction from 768 to 10 dimensions is very aggressive and may not generalize.}
     \AuthorResponse{We thank the reviewer for this valid concern. We acknowledge the aggressive reduction and its generalization risks. We have expanded Future Work to highlight the need for PCA dimensionality ablation studies.}
-    \AutoRevision{2.3,2.7,3.7}
+    \AutoRevision{2.3}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 3.3}
     \ReviewerText{Negative sampling may create mostly easy negatives. Hard negative mining could improve decision boundaries.}
     \AuthorResponse{We thank the reviewer for this point. While our approach combines two strategies to ensure balance, we acknowledge that explicit hard negative mining could further sharpen boundaries. We have added this to Future Work.}
-    \AutoRevision{3.2,3.8}
+    \AutoRevision{3.2}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 3.4}
     \ReviewerText{Maintaining the full graph in memory may become difficult as repositories grow.}
     \AuthorResponse{We thank the reviewer for this practical concern. We clarify that the GNN is used only during training, not inference. For even larger repositories, we discuss strategies in the expanded Future Work section.}
-    \AutoRevision{3.5,3.9,4.14}
+    \AutoRevision{3.5}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 3.5}
@@ -252,7 +266,7 @@ We thank the reviewer for the detailed evaluation and constructive criticism.
 \begin{ReviewCycle}{Comment 3.6}
     \ReviewerText{Overlap between Introduction, Problem Description, and Related Work sections.}
     \AuthorResponse{We thank the reviewer for this structural feedback. We have substantially revised Section 2 to focus on problem definition and motivation, reducing redundancy.}
-    \AutoRevision{3.1,4.1}
+    \AutoRevision{3.1}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 3.7}
@@ -264,7 +278,7 @@ We thank the reviewer for the detailed evaluation and constructive criticism.
 \begin{ReviewCycle}{Comment 3.8}
     \ReviewerText{Results don't beat baselines; lack of cross-validation or statistical tests makes small differences unreliable.}
     \AuthorResponse{We thank the reviewer. We acknowledge both concerns: (1) our goal is competitive performance with unlabeled data leverage, and (2) lack of statistical rigor is a limitation. We have acknowledged this in Threats to Validity.}
-    \AutoRevision{2.4,2.8,3.10}
+    \AutoRevision{2.4,3.10}
 \end{ReviewCycle}
 
 % ==============================================================================
@@ -280,13 +294,13 @@ We thank the reviewer for the detailed evaluation and constructive criticism.
 \begin{ReviewCycle}{Comment 4.1}
     \ReviewerText{Section 2 reads like methodology rather than problem definition and motivation.}
     \AuthorResponse{We thank the reviewer for this structural critique. We have substantially revised Section 2 to focus on problem definition and technical motivation.}
-    \AutoRevision{3.1,4.1}
+    \AutoRevision{3.1}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comment 4.2}
     \ReviewerText{Graph construction ignores descriptions, which may forgo significant data.}
     \AuthorResponse{We thank the reviewer. We acknowledge this limitation and have listed incorporating descriptions as future work.}
-    \AutoRevision{3.3,4.3}
+    \AutoRevision{3.3}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comments 4.3--4.10}
@@ -298,21 +312,15 @@ We thank the reviewer for the detailed evaluation and constructive criticism.
 \begin{ReviewCycle}{Comment 4.11}
     \ReviewerText{Section 2 should include concrete examples of LLM failures and properly describe the DBRD problem.}
     \AuthorResponse{We thank the reviewer. We have substantially revised Section 2 to include formal problem definition and concrete motivation with realistic scenarios.}
-    \AutoRevision{3.1,4.1,4.2}
+    \AutoRevision{3.1,4.2}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{Comments 4.12--4.28}
     \ReviewerText{Various additional issues: abbreviations, phrasing, figure references, early stopping details, and scalability discussions.}
     \AuthorResponse{We thank the reviewer for the comprehensive list. We have systematically addressed all issues including clarifying early stopping criterion, adding figure references, and discussing distributed strategies.}
-    \AutoRevision{1.7,4.8,4.9,4.11,4.12,4.13,3.5,3.9,4.14}
+    \AutoRevision{1.7,4.9,1.5,4.12,4.13,3.5}
 \end{ReviewCycle}
 
-% ==============================================================================
-% CONCLUSION
-% ==============================================================================
 
-\vspace{1em}
-\noindent
-\textbf{Summary:} We have carefully addressed all reviewer comments through manuscript revisions, expanded discussions, and acknowledgments of limitations. Key changes include: (1) substantial revision of Section 2 for clearer problem definition and motivation, (2) comprehensive grammatical and formatting corrections, (3) expanded Future Work with detailed discussions of experimental directions, (4) explicit acknowledgment of statistical validation limitations, (5) clarification of competitive performance value, and (6) improved reproducibility package. We believe these revisions have significantly strengthened the manuscript.
 
 \end{document}

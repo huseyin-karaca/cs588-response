@@ -324,12 +324,12 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecbi1000.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/fontawesome/FontAwesome--fontawesometwo.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecbi1000.tfm
 INPUT latex_build/response_letter.aux
 INPUT latex_build/response_letter.out
 INPUT latex_build/response_letter.out

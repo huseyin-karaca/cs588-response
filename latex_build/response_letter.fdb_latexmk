@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1767351481.50167 "/Users/huseyinkaraca/Desktop/cs588-response/response_letter.tex" "latex_build/response_letter.pdf" "response_letter" 1767351483.59703 0
-  "/Users/huseyinkaraca/Desktop/cs588-response/response_letter.tex" 1767351481.31952 17324 5880d2ca9b2b9425e871dd687c41f53b ""
+["pdflatex"] 1767353189.67987 "/Users/huseyinkaraca/Desktop/cs588-response/response_letter.tex" "latex_build/response_letter.pdf" "response_letter" 1767353191.8546 0
+  "/Users/huseyinkaraca/Desktop/cs588-response/response_letter.tex" 1767353189.46013 17140 a04fa918979a1ab8a54a3ca2f25295d0 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -199,11 +199,11 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1712147339.2095 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1712147302 8221443 67138db2e6345e8bb6d0a74c215284d1 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "latex_build/main_round2.aux" 1767350838.64773 18186 0e54d35c70379319d52ccae5ef2d6ffe ""
-  "latex_build/manuscript.cpy" 1767350838.64903 26240 42a76e2a3f2b4c2f8e3582038b9cf011 ""
-  "latex_build/response_letter.aux" 1767351483.5159 163 7ed6127883b2b69a438ca81fea2f3d8c "pdflatex"
-  "latex_build/response_letter.out" 1767351481.97362 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "response_letter.tex" 1767351481.31952 17324 5880d2ca9b2b9425e871dd687c41f53b ""
+  "latex_build/main_round2.aux" 1767353188.87942 18293 f6c3a3fd69a60e67301df0aa1ba1015d ""
+  "latex_build/manuscript.cpy" 1767353188.88071 26324 efd348ba98bc76bdf41f65084c5eca28 ""
+  "latex_build/response_letter.aux" 1767353191.76223 163 8e09227b06dc43eed78b79ff75fb095e "pdflatex"
+  "latex_build/response_letter.out" 1767353190.15755 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "response_letter.tex" 1767353189.46013 17140 a04fa918979a1ab8a54a3ca2f25295d0 ""
   (generated)
   "latex_build/response_letter.aux"
   "latex_build/response_letter.log"

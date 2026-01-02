@@ -232,6 +232,7 @@
 %% article.
 
 \begin{abstract}
+\label{sec:abstract}
 \textbf{Context.} Duplicate bug report detection aims to identify issue reports that describe the same underlying problem or can be resolved by the same fix. In large-scale repositories, duplicates increase triage workload and waste developer time. While transformer-based sentence encoders improve semantic matching compared to classical IR baselines, they rely on labeled duplicate pairs, which are typically scarce in real-world repositories. Moreover, exhaustive pairwise training is computationally infeasible and cannot effectively incorporate the full pool of unlabeled reports.
 
 \textbf{Method.} We propose a semi-supervised Graph-Enhanced Transformer framework that couples transformer-based semantic encoding with graph-based message passing. We represent the full corpus (train/validation/test) as nodes in a title-similarity graph built from \texttt{bert-base-uncased} title embeddings; to obtain a more informative similarity geometry, we apply PCA before computing similarities (thresholding can be used as an optional sparsification step). During training, transformer \texttt{[CLS]} embeddings are projected to a compact space and injected into a two-layer \revised{4.5}{Graph Convolutional Network (GCN)}, enabling information propagation from supervised nodes to the unlabeled portion of the corpus. Supervision is applied only on a feasible subset of labeled positive pairs and sampled negatives via a cosine embedding objective, while the remaining unlabeled reports contribute indirectly through graph propagation. For evaluation, model parameters are frozen and pairwise predictions are obtained by thresholding cosine similarity, where the decision threshold is selected on the validation split.
@@ -283,7 +284,9 @@
 %% Keywords. The author(s) should pick words that accurately describe
 %% the work being presented. Separate the keywords with commas.
 \keywords{Bug Report, Bug Duplicate Detection, Transformers, BERT, LLMs, Graph Neural Networks, Semi-Supervised Learning}
-\revised{4.6}{Changed keyword from ``Issue'' to ``Bug Report'' and capitalized ``Semi-Supervised Learning''.}
+
+\label{sec:keywords}
+\revised{4.6}{Changed ``Issue'' to ``Bug Report'' and properly capitalized ``Semi-Supervised Learning'' for consistency with standard terminology.}
 
 
 \received{16 November 2025}
@@ -425,7 +428,8 @@ Stepping back, we view DBRD as both a semantic and a relational problem. In the 
     \caption{Overall pipeline of the proposed method. \textbf{Upper:} The issues are documented with issue numbers, titles, and descriptions. The positive and negative pairs are collected and stacked. Then, the token IDs are listed to be fed into BERT. \textbf{Middle:} The graph is constructed, then BERT is employed for feature extractor and these embeddings transferred to the GNN component. Finally, the model is trained based on similarity and dissimilarities between pairs.}
     \label{fig:main_figure}
 \end{figure*}
-\revised{4.9}{Figure 1 caption: corrected ``token id's'' to ``token IDs''.}
+
+\revised{4.9}{In Figure 1, corrected the formatting from ``token id's'' to ``token IDs'' following standard conventions.}
 
 
 \section{Proposed Method}
