@@ -1,0 +1,16 @@
+% Performance comparison table (Precision, Recall, F1)
+% Used in both report.tex (with \cite) and final_presentation.tex (with \supercite)
+\begin{tabular}{lccccccc}
+\toprule
+\textbf{Model} & \multicolumn{3}{c}{\textbf{Eclipse}} & \multicolumn{3}{c}{\textbf{Thunderbird}}\\
+& P & R & F1 & P & R & F1 & \\
+\midrule
+BERT \cite{devlin2019bert} & 0.921 & 0.933 & 0.927 & 0.953 & 0.961 & 0.957\\
+RoBERTa \cite{liu2019roberta} & 0.918 & 0.930 & 0.924 & 0.946 & 0.968 & 0.957\\
+DistilBERT \cite{distilbert} & 0.936 & 0.921 & 0.929 & 0.950 & 0.965 & 0.957 \\
+CodeBERT \cite{codebert} & 0.920 & 0.928 & 0.924 & 0.902 & 0.930 & 0.916\\
+\midrule
+\textbf{Ours} & \textbf{0.913} & \textbf{0.935} & \textbf{0.924} & \textbf{0.949} & \textbf{0.966} & \textbf{0.957} \\
+\bottomrule
+\end{tabular}
+

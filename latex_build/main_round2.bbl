@@ -1,0 +1,357 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{34}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Antoniou et~al\mbox{.}(2018)]%
+        {antoniou2017dagan}
+\bibfield{author}{\bibinfo{person}{Antreas Antoniou}, \bibinfo{person}{Amos Storkey}, {and} \bibinfo{person}{Harrison Edwards}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Augmenting Image Classifiers Using Data Augmentation Generative Adversarial Networks}. In \bibinfo{booktitle}{\emph{Artificial Neural Networks and Machine Learning -- ICANN 2018}}. \bibinfo{publisher}{Springer International Publishing}, \bibinfo{pages}{594--603}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-030-01424-7_58}
+\showDOI{\tempurl}
+\newblock
+\shownote{arXiv preprint arXiv:1711.04340}.
+
+
+\bibitem[Anvik et~al\mbox{.}(2005)]%
+        {anvik}
+\bibfield{author}{\bibinfo{person}{John Anvik}, \bibinfo{person}{Lyndon Hiew}, {and} \bibinfo{person}{Gail~C. Murphy}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{Coping with an Open Bug Repository}. In \bibinfo{booktitle}{\emph{Proceedings of the OOPSLA Workshop on Eclipse Technology eXchange (eTx)}}. \bibinfo{publisher}{ACM}, \bibinfo{address}{San Diego, CA, USA}, \bibinfo{pages}{35--39}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1117696.1117704}
+\showDOI{\tempurl}
+
+
+\bibitem[Chaparro et~al\mbox{.}(2016)]%
+        {chaparro2016}
+\bibfield{author}{\bibinfo{person}{Oscar Chaparro}, \bibinfo{person}{Juan~M. Florez}, {and} \bibinfo{person}{Andrian Marcus}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{On the vocabulary agreement in software issue descriptions}. In \bibinfo{booktitle}{\emph{2016 IEEE International Conference on Software Maintenance and Evolution (ICSME)}}. IEEE, \bibinfo{pages}{448--452}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ICSME.2016.50}
+\showDOI{\tempurl}
+
+
+\bibitem[Deshmukh et~al\mbox{.}(2017)]%
+        {deshmukh2017towards}
+\bibfield{author}{\bibinfo{person}{Jayati Deshmukh}, \bibinfo{person}{K.~M. Annervaz}, \bibinfo{person}{Sanjay Podder}, \bibinfo{person}{Shubhashis Sengupta}, {and} \bibinfo{person}{Neville Dubash}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Towards accurate duplicate bug retrieval using deep learning techniques}. In \bibinfo{booktitle}{\emph{2017 IEEE International Conference on Software Maintenance and Evolution (ICSME)}}. IEEE, \bibinfo{pages}{115--124}.
+\newblock
+
+
+\bibitem[Devlin et~al\mbox{.}(2019a)]%
+        {devlin2019bert}
+\bibfield{author}{\bibinfo{person}{Jacob Devlin}, \bibinfo{person}{Ming-Wei Chang}, \bibinfo{person}{Kenton Lee}, {and} \bibinfo{person}{Kristina Toutanova}.} \bibinfo{year}{2019}\natexlab{a}.
+\newblock \showarticletitle{BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding}. In \bibinfo{booktitle}{\emph{Proceedings of NAACL-HLT 2019}}. \bibinfo{pages}{4171--4186}.
+\newblock
+
+
+\bibitem[Devlin et~al\mbox{.}(2019b)]%
+        {devlin2018bert}
+\bibfield{author}{\bibinfo{person}{Jacob Devlin}, \bibinfo{person}{Ming-Wei Chang}, \bibinfo{person}{Kenton Lee}, {and} \bibinfo{person}{Kristina Toutanova}.} \bibinfo{year}{2019}\natexlab{b}.
+\newblock \showarticletitle{{BERT}: Pre-training of Deep Bidirectional Transformers for Language Understanding}. In \bibinfo{booktitle}{\emph{Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)}}. \bibinfo{publisher}{Association for Computational Linguistics}, \bibinfo{address}{Minneapolis, Minnesota}, \bibinfo{pages}{4171--4186}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.18653/v1/N19-1423}
+\showDOI{\tempurl}
+
+
+\bibitem[Feng et~al\mbox{.}(2020)]%
+        {codebert}
+\bibfield{author}{\bibinfo{person}{Zhangyin Feng}, \bibinfo{person}{Daya Guo}, \bibinfo{person}{Duyu Tang}, \bibinfo{person}{Nan Duan}, \bibinfo{person}{Xiaocheng Feng}, \bibinfo{person}{Ming Gong}, \bibinfo{person}{Linjun Shou}, \bibinfo{person}{Bing Qin}, \bibinfo{person}{Ting Liu}, \bibinfo{person}{Daxin Jiang}, {and} \bibinfo{person}{Ming Zhou}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \bibinfo{title}{CodeBERT: A Pre-Trained Model for Programming and Natural Languages}.
+\newblock
+\newblock
+\showeprint[arxiv]{2002.08155}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2002.08155}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Furnas et~al\mbox{.}(1987a)]%
+        {furnas1987vocabulary}
+\bibfield{author}{\bibinfo{person}{George~W. Furnas}, \bibinfo{person}{Thomas~K. Landauer}, \bibinfo{person}{Louis~M. Gomez}, {and} \bibinfo{person}{Susan~T. Dumais}.} \bibinfo{year}{1987}\natexlab{a}.
+\newblock \showarticletitle{The vocabulary problem in human-system communication}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{30}, \bibinfo{number}{11} (\bibinfo{year}{1987}), \bibinfo{pages}{964--971}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/32206.32212}
+\showDOI{\tempurl}
+
+
+\bibitem[Furnas et~al\mbox{.}(1987b)]%
+        {furnas1987}
+\bibfield{author}{\bibinfo{person}{George~W. Furnas}, \bibinfo{person}{Thomas~K. Landauer}, \bibinfo{person}{Louis~M. Gomez}, {and} \bibinfo{person}{Susan~T. Dumais}.} \bibinfo{year}{1987}\natexlab{b}.
+\newblock \showarticletitle{The vocabulary problem in human-system communication}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{30}, \bibinfo{number}{11} (\bibinfo{year}{1987}), \bibinfo{pages}{964--971}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/32206.32212}
+\showDOI{\tempurl}
+
+
+\bibitem[Hamilton et~al\mbox{.}(2017)]%
+        {hamilton2017inductive}
+\bibfield{author}{\bibinfo{person}{William~L. Hamilton}, \bibinfo{person}{Rex Ying}, {and} \bibinfo{person}{Jure Leskovec}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Inductive Representation Learning on Large Graphs}. In \bibinfo{booktitle}{\emph{Advances in Neural Information Processing Systems (NIPS)}}, Vol.~\bibinfo{volume}{30}. \bibinfo{publisher}{Curran Associates, Inc.}, \bibinfo{pages}{1024--1034}.
+\newblock
+
+
+\bibitem[He et~al\mbox{.}(2020)]%
+        {he2020dualchannel}
+\bibfield{author}{\bibinfo{person}{Jianjun He}, \bibinfo{person}{Ling Xu}, \bibinfo{person}{Meng Yan}, \bibinfo{person}{Xin Xia}, {and} \bibinfo{person}{Yan Lei}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Duplicate Bug Report Detection Using Dual-Channel Convolutional Neural Networks}. In \bibinfo{booktitle}{\emph{2020 28th International Conference on Program Comprehension (ICPC)}}. ACM, \bibinfo{pages}{117--127}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3387904.3389263}
+\showDOI{\tempurl}
+
+
+\bibitem[Jalbert and Weimer(2008)]%
+        {jalbert2008automated}
+\bibfield{author}{\bibinfo{person}{Nicholas Jalbert} {and} \bibinfo{person}{Westley Weimer}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Automated duplicate detection for bug tracking systems}. In \bibinfo{booktitle}{\emph{2008 IEEE International Conference on Dependable Systems and Networks With FTCS and DCC (DSN)}}. IEEE, \bibinfo{pages}{52--61}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/DSN.2008.4630070}
+\showDOI{\tempurl}
+
+
+\bibitem[Jiang et~al\mbox{.}(2019)]%
+        {jiang2019semi}
+\bibfield{author}{\bibinfo{person}{Bo Jiang}, \bibinfo{person}{Ziyan Zhang}, \bibinfo{person}{Doudou Lin}, \bibinfo{person}{Jin Tang}, {and} \bibinfo{person}{Bin Luo}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Semi-supervised learning with graph learning-convolutional networks}. In \bibinfo{booktitle}{\emph{Proceedings of the IEEE/CVF conference on computer vision and pattern recognition}}. \bibinfo{pages}{11313--11320}.
+\newblock
+
+
+\bibitem[Kipf(2016)]%
+        {kipf2016semi}
+\bibfield{author}{\bibinfo{person}{TN Kipf}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Semi-supervised classification with graph convolutional networks}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:1609.02907}} (\bibinfo{year}{2016}).
+\newblock
+
+
+\bibitem[Kipf and Welling(2017)]%
+        {kipf2017gcn}
+\bibfield{author}{\bibinfo{person}{Thomas~N. Kipf} {and} \bibinfo{person}{Max Welling}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Semi-Supervised Classification with Graph Convolutional Networks}. In \bibinfo{booktitle}{\emph{International Conference on Learning Representations (ICLR)}}.
+\newblock
+
+
+\bibitem[Ko{\c{c}} et~al\mbox{.}(2025a)]%
+        {koc2025graphteacher}
+\bibfield{author}{\bibinfo{person}{Emirhan Ko{\c{c}}}, \bibinfo{person}{Arda~Can Aras}, \bibinfo{person}{Tuna Alika{\c{s}}ifo{\u{g}}lu}, {and} \bibinfo{person}{Aykut Ko{\c{c}}}.} \bibinfo{year}{2025}\natexlab{a}.
+\newblock \showarticletitle{GraphTeacher: Transductive Fine-Tuning of Encoders through Graph Neural Networks}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Artificial Intelligence}} (\bibinfo{year}{2025}).
+\newblock
+
+
+\bibitem[Ko{\c{c}} et~al\mbox{.}(2025b)]%
+        {kocc2025scgrapht}
+\bibfield{author}{\bibinfo{person}{Emirhan Ko{\c{c}}}, \bibinfo{person}{Emre Kulkul}, \bibinfo{person}{G{\"u}lara Kaynar}, \bibinfo{person}{Tolga {\c{C}}ukur}, \bibinfo{person}{Murat Acar}, {and} \bibinfo{person}{Aykut Ko{\c{c}}}.} \bibinfo{year}{2025}\natexlab{b}.
+\newblock \showarticletitle{scGraPhT: Merging Transformers and Graph Neural Networks for Single-Cell Annotation}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Signal and Information Processing over Networks}} (\bibinfo{year}{2025}).
+\newblock
+
+
+\bibitem[Lamkanfi et~al\mbox{.}(2013)]%
+        {eclipse-mozilla}
+\bibfield{author}{\bibinfo{person}{Ahmed Lamkanfi}, \bibinfo{person}{Javier Pérez}, {and} \bibinfo{person}{Serge Demeyer}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{The Eclipse and Mozilla defect tracking dataset: A genuine dataset for mining bug information}. In \bibinfo{booktitle}{\emph{2013 10th Working Conference on Mining Software Repositories (MSR)}}. \bibinfo{pages}{203--206}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/MSR.2013.6624028}
+\showDOI{\tempurl}
+
+
+\bibitem[Lan et~al\mbox{.}(2020)]%
+        {lan2020albert}
+\bibfield{author}{\bibinfo{person}{Zhenzhong Lan}, \bibinfo{person}{Mingda Chen}, \bibinfo{person}{Sebastian Goodman}, \bibinfo{person}{Kevin Gimpel}, \bibinfo{person}{Piyush Sharma}, {and} \bibinfo{person}{Radu Soricut}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{ALBERT}: {A} {L}ite {BERT} for {S}elf-supervised {L}earning of {L}anguage {R}epresentations}. In \bibinfo{booktitle}{\emph{International Conference on Learning Representations (ICLR)}}.
+\newblock
+
+
+\bibitem[Lee(2023)]%
+        {lee2023sbertdupbug}
+\bibfield{author}{\bibinfo{person}{Sunho Lee}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Duplicate Bug Report Detection by Using Sentence BERT and Faiss}. In \bibinfo{booktitle}{\emph{Proceedings of the 2nd International Workshop on Intelligent Software Engineering (ISE 2023)}}. \bibinfo{publisher}{CEUR-WS}.
+\newblock
+
+
+\bibitem[Liu et~al\mbox{.}(2019)]%
+        {liu2019roberta}
+\bibfield{author}{\bibinfo{person}{Yinhan Liu}, \bibinfo{person}{Myle Ott}, \bibinfo{person}{Naman Goyal}, \bibinfo{person}{Jingfei Du}, \bibinfo{person}{Mohit Grover}, \bibinfo{person}{Ankur Goyal}, \bibinfo{person}{Omer Tufekci}, \bibinfo{person}{Smriti Singh}, \bibinfo{person}{Kanishk Tandon}, \bibinfo{person}{Vaibhav Khandelwal}, {et~al\mbox{.}}} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{RoBERTa}: {A} {R}obustly {O}ptimized {BERT} {P}retraining {A}pproach}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:1907.11692}} (\bibinfo{year}{2019}).
+\newblock
+
+
+\bibitem[Malik et~al\mbox{.}(2023)]%
+        {malik2023dataaug}
+\bibfield{author}{\bibinfo{person}{Garima Malik}, \bibinfo{person}{Mucahit Cevik}, {and} \bibinfo{person}{Ayşe Başar}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Data Augmentation for Conflict and Duplicate Detection in Software Engineering Sentence Pairs}. In \bibinfo{booktitle}{\emph{Proceedings of the ACM Software Engineering Conference}}.
+\newblock
+
+
+\bibitem[Manning et~al\mbox{.}(2008)]%
+        {manning2008}
+\bibfield{author}{\bibinfo{person}{Christopher~D. Manning}, \bibinfo{person}{Prabhakar Raghavan}, {and} \bibinfo{person}{Hinrich Sch{\"u}tze}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Introduction to Information Retrieval}}.
+\newblock \bibinfo{publisher}{Cambridge University Press}, \bibinfo{address}{Cambridge, UK}.
+\newblock
+\showISBNx{978-0-521-86571-5}
+
+
+\bibitem[Meng et~al\mbox{.}(2024)]%
+        {meng2024}
+\bibfield{author}{\bibinfo{person}{Qianru Meng}, \bibinfo{person}{Xiao Zhang}, \bibinfo{person}{Guus Ramackers}, {and} \bibinfo{person}{Visser Joost}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{Combining Retrieval and Classification: Balancing Efficiency and Accuracy in Duplicate Bug Report Detection}.
+\newblock
+\newblock
+\showeprint[arxiv]{2404.14877}~[cs.SE]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2404.14877}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Nguyen et~al\mbox{.}(2012)]%
+        {nguyen2012dbtm}
+\bibfield{author}{\bibinfo{person}{Anh~Tuan Nguyen}, \bibinfo{person}{Tung~Thanh Nguyen}, \bibinfo{person}{Tien~N. Nguyen}, \bibinfo{person}{David Lo}, {and} \bibinfo{person}{Chengnian Sun}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Duplicate bug report detection with a combination of information retrieval and topic modeling}. In \bibinfo{booktitle}{\emph{Proceedings of the 20th Working Conference on Reverse Engineering (WCRE)}}. IEEE, \bibinfo{pages}{299--308}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/WCRE.2012.38}
+\showDOI{\tempurl}
+
+
+\bibitem[Poddar et~al\mbox{.}(2019)]%
+        {poddar2019trainone}
+\bibfield{author}{\bibinfo{person}{Lahari Poddar}, \bibinfo{person}{Leonardo Neves}, \bibinfo{person}{William Brendel}, \bibinfo{person}{Luis Marujo}, \bibinfo{person}{Sergey Tulyakov}, {and} \bibinfo{person}{Pradeep Karuturi}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Train One Get One Free: Partially Supervised Neural Network for Bug Report Duplicate Detection and Clustering}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:1903.12431}} (\bibinfo{year}{2019}).
+\newblock
+
+
+\bibitem[Reimers and Gurevych(2019a)]%
+        {reimers2019sbert}
+\bibfield{author}{\bibinfo{person}{Nils Reimers} {and} \bibinfo{person}{Iryna Gurevych}.} \bibinfo{year}{2019}\natexlab{a}.
+\newblock \showarticletitle{Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:1908.10084}} (\bibinfo{year}{2019}).
+\newblock
+
+
+\bibitem[Reimers and Gurevych(2019b)]%
+        {reimers2019sentencebert}
+\bibfield{author}{\bibinfo{person}{Nils Reimers} {and} \bibinfo{person}{Iryna Gurevych}.} \bibinfo{year}{2019}\natexlab{b}.
+\newblock \showarticletitle{Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks}. In \bibinfo{booktitle}{\emph{Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)}}. \bibinfo{publisher}{Association for Computational Linguistics}, \bibinfo{address}{Hong Kong, China}, \bibinfo{pages}{3982--3992}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.18653/v1/D19-1410}
+\showDOI{\tempurl}
+
+
+\bibitem[Salton and Buckley(1988)]%
+        {salton1988}
+\bibfield{author}{\bibinfo{person}{Gerard Salton} {and} \bibinfo{person}{Chris Buckley}.} \bibinfo{year}{1988}\natexlab{}.
+\newblock \showarticletitle{Term-weighting approaches in automatic text retrieval}.
+\newblock \bibinfo{journal}{\emph{Information Processing \& Management}} \bibinfo{volume}{24}, \bibinfo{number}{5} (\bibinfo{year}{1988}), \bibinfo{pages}{513--523}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1016/0306-4573(88)90021-0}
+\showDOI{\tempurl}
+
+
+\bibitem[Sanh et~al\mbox{.}(2020)]%
+        {distilbert}
+\bibfield{author}{\bibinfo{person}{Victor Sanh}, \bibinfo{person}{Lysandre Debut}, \bibinfo{person}{Julien Chaumond}, {and} \bibinfo{person}{Thomas Wolf}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \bibinfo{title}{DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter}.
+\newblock
+\newblock
+\showeprint[arxiv]{1910.01108}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1910.01108}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Sparck~Jones(1972)]%
+        {sparckjones1972}
+\bibfield{author}{\bibinfo{person}{Karen Sparck~Jones}.} \bibinfo{year}{1972}\natexlab{}.
+\newblock \showarticletitle{A statistical interpretation of term specificity and its application in retrieval}.
+\newblock \bibinfo{journal}{\emph{Journal of Documentation}} \bibinfo{volume}{28}, \bibinfo{number}{1} (\bibinfo{year}{1972}), \bibinfo{pages}{11--21}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1108/eb026526}
+\showDOI{\tempurl}
+
+
+\bibitem[Sun et~al\mbox{.}(2011)]%
+        {sun2011towards}
+\bibfield{author}{\bibinfo{person}{Chengnian Sun}, \bibinfo{person}{David Lo}, \bibinfo{person}{Siau-Cheng Khoo}, {and} \bibinfo{person}{Jing Jiang}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Towards more accurate retrieval of duplicate bug reports}. In \bibinfo{booktitle}{\emph{2011 26th IEEE/ACM International Conference on Automated Software Engineering (ASE)}}. IEEE, \bibinfo{pages}{253--262}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ASE.2011.6100061}
+\showDOI{\tempurl}
+
+
+\bibitem[Sun et~al\mbox{.}(2010)]%
+        {sun2010discriminative}
+\bibfield{author}{\bibinfo{person}{Chengnian Sun}, \bibinfo{person}{David Lo}, \bibinfo{person}{Xiaoyin Wang}, \bibinfo{person}{Jing Jiang}, {and} \bibinfo{person}{Siau-Cheng Khoo}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{A discriminative model approach for accurate duplicate bug report retrieval}. In \bibinfo{booktitle}{\emph{Proceedings of the 32nd ACM/IEEE International Conference on Software Engineering (ICSE)}}, Vol.~\bibinfo{volume}{1}. ACM, \bibinfo{pages}{45--54}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1806799.1806807}
+\showDOI{\tempurl}
+
+
+\bibitem[Zhang et~al\mbox{.}(2023)]%
+        {zhang2023cupid}
+\bibfield{author}{\bibinfo{person}{Ting Zhang}, \bibinfo{person}{Amin Khasteh}, \bibinfo{person}{Minh-Son Le}, \bibinfo{person}{Hoan~Anh Nguyen}, {and} \bibinfo{person}{David Lo}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Cupid: Leveraging ChatGPT for More Accurate Duplicate Bug Report Detection}.
+\newblock
+\newblock
+\showeprint[arxiv]{2308.10022}~[cs.SE]
+
+
+\end{thebibliography}

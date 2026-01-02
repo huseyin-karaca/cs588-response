@@ -1,0 +1,78 @@
+Reviewer 3
+Overall Recommendation: Weak Reject
+
+Hakeme özenli incelemesi ve olumlu yorumları (strong baseline comparison, effective use of unlabeled data vb.) için teşekkür ederiz. 
+
+Comment 3.1: The paper states that the edges in your graph are built based on semantic similarity of
+issue titles [Page 5: 559]. From my personal experience bug report titles are often short,
+vague and incomplete. By completely ignoring report descriptions during the edge
+construction phase aren’t you most likely throwing away the most important
+relationship between reports? And I think a graph that connects nodes based on titles
+may not accurately represent the correct neighborhood of a bug which overall limit the
+effectiveness.
+Response: We thank the reviewer... We acknowledge the validity of the comment. However, we would like to point out that addind descriptions or other information to the graph construction process is straightforward. As a proof of concept, we showed that it can be doable. However, we acknowledge, and as a future work, we will enlarge our method to include descriptions, too. Furthermore, we are planning to enlarge to vision transformers to even include photos. 
+Revisions: [Add if you include something related to that.]
+
+Comment 3.2: The reliance on PCA to reduce the 768-dimensional BERT embedding to 10 dimensions
+seems very aggressive [Page 5: 557 – 570]. While the paper mentions that this action
+was necessary because the raw embeddings were “overly smooth” [Page 5: 563], I
+believe compressing the data this much may create the risk of losing critical information.
+And I believe this is looking like a heuristic that is working for these datasets but the
+same logic might fail to generalize to other datasets since the variance will most likely
+be different.
+Response: We thank the reviewer... We acknowledge the validity of the comment. Due to the time constraints, we could not make specific experiments to shed light into the PCA dimensions, but we will ... future work ... 
+Revisions: The corresponding parts in the future work. 
+
+Comment 3.3: The paper uses anchor-based negative pairing then followed by random sampling in
+order to construct negative pairs [Page 4: 416, 420]. In this case since most of the bug
+reports are very dissimilar, sampling would almost always create bug samples that are
+completely unrelated and highly unlikely to contain difficult non-duplicates (reports that
+look similar but actually different). Then if the model is trained on easy negatives, it
+would be difficult to correctly predict difficult examples and decision boundaries? Similarly, additional random sampling across different duplicate groups [Page 4: 427]
+could cause the same problem as above. Overall, for this approach, I believe a strategy to match difficult negatives can be
+implemented to increase the model’s ability to learn decision boundaries between
+similar but different bug reports.
+Response: We thank the reviewer...Burada bizim cevabımızı savun. Hakemin bizi yanlış anladığını düşünüyorum. Biz zaten pair'ları oluştururken dengeli olmaya özen gösteriyoruz. Hem aynı cluster içinden, hem farklı cluster'lar içinden pair'lar seçiyor / oluşturuyoruz. 1-1, 0-1, 0-0 eşleri yani. Zaten yapılabilirliğini gösteriyoruz ki sorun ne yani? Aggressive dimensionality reduction in PCA help a lot. 
+Revisions: Bir değişikliğe gerek yok gibi. Ama belki paper'ın ilgili kısmını buraya tekrar edebilirsin. 
+
+Comment 3.4: The current approach requires constructing a graph that includes all reports and holding
+it in the memory. As the number of reports grows, maintaining the full graph in memory
+may become difficult and expensive. I believe this is an important bottleneck for realworld applications.
+Sample Response: "We thank the reviewer for this insightful comment regarding memory constraints. We agree that maintaining a full graph for millions of reports could be challenging. However, we would like to clarify two key points in our architecture: 1. Inference Scalability: Our framework is designed so that the GNN is used exclusively during the training phase to leverage unlabeled data. For real-world deployment, the GNN is discarded, and inference is performed using only the Transformer encoder against stored embeddings. This eliminates the need to reconstruct or hold the graph in memory during production. 2. Handling Large-Scale Repositories: In our experiments with the Eclipse dataset (~68k reports), the memory overhead was manageable on a single high-performance GPU. For even larger scales, we have discussed potential strategies such as graph pruning and sparsification in Section 6.
+We have further clarified this 'training-only' GNN usage in the revised version to better address concerns about practical deployment."
+Revision: Buna uygun bir revision yap.
+
+Comment 3.5: The proposed methodology is only tested on two datasets. Eclipse and Mozilla
+Thunderbird. While these datasets are mentioned as benchmarks [Page 7: 715] still
+testing on a small number of datasets makes it difficult to claim potential generalization
+opportunities. I believe these repositories may have similar reporting cultures since they
+are large scale and open-source projects. I think it would be great to see how the model
+performs on smaller and more distinct datasets to verify its robustness.
+Response: We thank the reviewer... Acknowledge the validity... Due to constraints... Future work...
+Revision: Corresponding parts in the future work. 
+
+Comment 3.6: There is a noticeable overlap between Introduction, Problem Description and Related
+Work. For example, Problem Description section mentions the limitations of
+transformer-based models and scarcity of labels which is almost same the motivation
+provided in Introduction [Page 2: 135-137, 205-210]. Also, there are some content in
+Introduction that might better suit in Related Work section since this part mainly
+mentions related works [Page 2: 122-126].
+Response: Hakeme teşekkür et, haklı olduğunu belirt. Gerekli değişikliklerin yapıldığını söyle.
+Revisions: Gerekli değişiklikleri yap ve burada göster. Çıkardığın kısımları üstü çizili olarak falan aktarabilirsin
+
+Comment 3.7: The paper contains few typos and awkward phrases that negatively effects the flow of
+reading. For instance, there is awkward phrasing in the text “for example for example”
+[Page 2: 120].
+Response: Hakeme teşekkür et, haklı olduğunu belirt. Gerekli değişikliklerin yapıldığını söyle.
+Revisions: Gerekli değişiklikleri yap ve burada göster. Çıkardığın kısımları üstü çizili olarak falan aktarabilirsin
+
+
+Comment 3.8: (RQ3) While results are competitive, I believe the results show that the proposed methodology
+does not actually beat simpler and standard models, in fact obtained results are often the same
+or slightly lower. Additionally, as authors mentioned the study did not use standard validation
+methods like cross-validation or statistical test because of the limited computational resources,
+I also believe that this makes it difficult to trust that the small differences in results are real and
+not just because of luck.
+Response: Teşekkür et, önce kibarca tamamen novel bir teknik ile competitive bir sonuç elde etmenin de kendi kendine anlamlı olduğunu belirt. Statistical test ile ilgili de hakeme hak ver, de ki evet haklısınız, bunu future work olarak belirtiyoruz ve ileride değineceğiz vs.
+Revisions: Future work section'a eklenen tartışma. Onu ekle buraya. 
+

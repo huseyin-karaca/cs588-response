@@ -1,0 +1,44 @@
+Reviewer 1
+Overall Recommendation: Weak Accept
+
+Hakeme özenli incelemesi ve olumlu yorumları (strong baseline comparison, effective use of unlabeled data vb.) için teşekkür ederiz. 
+
+Comment 1.1: In Section 5.4 (lines 955–970), the paper talks about the training
+process by only mentioning the starting and ending loss values. This is acceptable,
+however it would be more helpful and comprehensive to mention the figure behind
+the page by reference before starting the discussion or include loss curves plotted over
+epochs at the same page of the discussion to make the reading flow easier to the
+reader.
+Response: Hakeme değerli yorumu ve bunu dikkatimize sunduğu için teşekkür ederiz. Bu plotlar, hem metodumuzun beklenen şekilde train olduğunu göstermek bakımından, hem de validation - training loss arasındaki negatif farka bakarak modelimizin genişleme kapasitesini göstermesi bakımından anlamlıdır. 
+Revision: Makalede ilgili kısma, figürlere bir referans ve minik bir tartışma ekle. Bir - iki cümle yeterli.
+
+Comment 1.2: Some potential improvements can be in Section 4.1 (line 516), graph nodes are initialized using one-hot encodings, experiments
+with other encodings like pretrained embeddings or learned node features can be helpful. Also, PCA dimensionality is fixed to d = 10 (subsection 4.1.1, line 566) however
+testing separability or performance for different d values can show the effect of noise
+reduction. In addition, several hyperparameters are fixed without ablation, such as
+the projection dimension D = 128, the fusion weight λ, the margin m in the loss
+function (Section 4.1.2), and number of training epochs, further exploring these parameters can add sensitivity analysis to the paper. These can improve the robustness
+of the proposed method.
+Response: We thank the reviewer for valuable suggestions. We acknowledge the validity and we state it as future work. 
+Revisions: No need to make revisions regarding that. 
+
+Comment 1.3: There are some grammatical issues in the paper that reduce the readability of the paper. For example, the acronym GCN is used before its full form (in
+Abstract, line 39), including the full term (“Graph Convolutional Network (GCN)”)
+in first use is advised. There is also a minor capitalization issue in the keyworks that
+updating it as ”Semi-Supervised Learning” would improve the format of keywords.
+Also, the term ”id est” on section 4, line 390, should be written as abbreviation (”i.e.”
+not ”ie.”). Next, in the Introduction (Section 1, page 2, line 120), duplicated words
+appear in phrases such as “for example for example”. Additionally, there is a missing comma in the enumeration (subsection 4.2, page 4, line 452) and incorrect plural
+formation using apostrophes in page 5, section 4, figure 1 caption (“token ids” not
+“token id’s”).
+Response: Hakeme bu eksiklikleri dikkatimize sunduğu için teşekkür ederiz. İstenilen değişiklikler yapılarak paper daha iyi bir hale getirilmiştir.
+Revisions: Hakemin saydığı değişiklikler. Hepsini zaten sayfa sayfa, section section listeleyeceğiz.
+
+Comment 1.4: Paper mentions that the full replication package is publicly available (Section 5.2.2), but some files required to reproduce the training process are
+missing from the GitHub repository and Google Drive. For example, the repository
+does not include tokenized pairs train *.csv created by tokenizer.py plus the
+files defining the graph structure for the SBERTGCN model (graph adj.npz and
+graph adj node ids.npy) and scripts for generating them. Also, the training notebook siamese bert training.ipynb shows an interrupted execution by keyboard.
+Addressing these issues by providing all of the required files and uploading a notebook with successful run can strengthen the reproducibility of the work.
+Response: Hakeme teşekkür ederiz. İlk aşamada hızlı reproducibility için bazı dosyaların processed versiyonlarını çekerek paketi çalıştırdık. Fakat yorumunuzun geçerliliğini kabul ediyoruz ve şimdi reproducibilitypackage'imiz raw datayı sıfırdan işleyip deneylerimizi tamamlayacak kodlarla desteklenmiştir ve bahsettiğiniz eksiklik giderilmiştir. Aynı şekilde, notebook'umuz da tamamlanmış haliyle görüntülenmektedir (zaten çalışmaktaydı sadece çıktılar görüntülenmemekteydi).
+Revisions: No revision on the original manuscript. MAybe you can give the github repo link (huseyin-karaca/graph-enhanced-dbd)

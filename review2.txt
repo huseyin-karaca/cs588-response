@@ -1,0 +1,49 @@
+Reviewer 2
+Overall suggestion: Weak reject
+
+Hakeme özenli incelemesi ve olumlu yorumları (strong baseline comparison, effective use of unlabeled data vb.) için teşekkür ederiz. 
+
+Comment 2.1: The paper positions itself as a solution for ”label-scarce” environments (Line 80, Line 365), however
+the experiments uses the full Eclipse and Thunderbird datasets. To claim that the graph structure
+leverages unlabeled data effectively, the authors should have conducted experiments with reduced
+training set sizes (5% or 10% of labeled data). Without this, there is no evidence that the method
+performs better than a standard transformer when labels are scarce.
+Response: We thank the reviewer... We acknowledge the validity of the comment, but due to the limited time, we left this as future work and clearly state...
+Revisions: The corresponding part in the future work. 
+
+Comment 2.2: Regarding RQ2 (Scalability), Table 4 only reports training time overhead (10-12%). Since a key
+contribution is the ”inductive and scalable by design” capability (Line 368) where the GNN is
+discarded, the paper must provide inference latency metrics (e.g. milliseconds per query) comparing
+the proposed method against the baselines. The claim of scalability is currently theoretical rather
+than experimental.
+Response: We thank the reviewer... We acknowledge the validity of the request, and ... future work.... 
+Revisions: The corresponding parts in the future work. 
+
+
+Comment 2.3: The paper states that PCA is used to reduce the BERT title embeddings from 768 dimensions
+to d=10 principal components to avoid over-smoothing and create a more informative similarity
+geometry (Line 566). I appreciate that the authors explicitly acknowledge in later sections that
+this dimensionality reduction introduces a dependency on the training data distribution and limits
+the method’s generalizability. However, acknowledging this limitation does not justify the lack of
+support for the choice of d=10. The selection appears arbitrary rather than data-driven. Even if
+generalizability is limited, the authors should have conducted a sensitivity analysis on the experimental datasets to demonstrate how the model’s performance fluctuates with different values of d (5, 20, 50).
+Response: We thank the reviewer .. for raising this concern ... We acknowledge the validity of the request ... future work.... 
+Revisions: The corresponding parts in the future work. 
+
+Comment 2.4: The results in Table 5 show that the proposed method gives no cocnrete benefit over standard
+baselines. On the Thunderbird dataset, the F1 score (0.957) is identical to RoBERTa and DistilBERT. On the Eclipse dataset, the method (0.924 F1) performs slightly worse than DistilBERT
+(0.929 F1).
+Response: We thank the reviewer. Give an answer in the direction of "beating is not everything, showing competitiveness is also a big thing".
+
+Comment 2.5: The application of Graph Neural Networks to the specific domain of duplicate bug report detection
+shows some originality. Specifically, the strategy of using the graph structure solely as a training-time
+regularizer to enhance a bi-encoder is a nice adaptation. However, similar hybrid architectures exist in
+other NLP domains, which limits the foundational novelty.
+Response: We thank the reviewer... [Burada novelty'mizi savun.]
+Revisions: Eğer değişiklik / ekleme yaptıysak onu burada belirt.
+
+Comment 2.6: The paper is well-written, clearly structured and easy to understand. The figures and tables are clear
+and shows the necessary information. I had no issues while reading the paper. However in Line 120 ”for
+example” is used twice.
+Response: We thank the reviewer...
+Revisions: We removed the repeating for example phrase.

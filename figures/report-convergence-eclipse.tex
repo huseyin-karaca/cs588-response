@@ -1,0 +1,74 @@
+\begin{figure*}[t]
+\centering
+\textbf{Eclipse Dataset}
+
+\begin{minipage}{0.48\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\textwidth,
+    height=4.5cm,
+    xlabel={Epoch},
+    ylabel={Loss},
+    xlabel style={font=\small},
+    ylabel style={font=\small},
+    xmin=0.5, xmax=5.5,
+    ymin=0, ymax=0.15,
+    xtick={1,2,3,4,5},
+    ytick={0.00,0.03,0.06,0.09,0.12,0.15},
+    yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=2, font=\small},
+    xticklabel style={font=\small},
+    grid=major,
+    grid style={dashed, gray!30},
+    legend pos=north east,
+    legend style={font=\small, fill opacity=0.8, draw opacity=1},
+    line width=1.5pt,
+    mark size=3pt,
+]
+\addplot[color=blue!70!black, mark=*] coordinates {
+    (1,0.125) (2,0.075) (3,0.048) (4,0.038) (5,0.032)
+};
+\addplot[color=red!70!black, mark=square*, dashed] coordinates {
+    (1,0.085) (2,0.058) (3,0.048) (4,0.042) (5,0.038)
+};
+\legend{Train, Val}
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\textwidth,
+    height=4.5cm,
+    xlabel={Epoch},
+    ylabel={F1 Score},
+    xlabel style={font=\small},
+    ylabel style={font=\small},
+    xmin=0.5, xmax=5.5,
+    ymin=0.65, ymax=1.0,
+    xtick={1,2,3,4,5},
+    ytick={0.70,0.80,0.90,1.00},
+    yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=2, font=\small},
+    xticklabel style={font=\small},
+    grid=major,
+    grid style={dashed, gray!30},
+    legend pos=south east,
+    legend style={font=\small, fill opacity=0.8, draw opacity=1},
+    line width=1.5pt,
+    mark size=3pt,
+]
+\addplot[color=green!60!black, mark=*] coordinates {
+    (1,0.795) (2,0.872) (3,0.905) (4,0.920) (5,0.933)
+};
+\addplot[color=orange!80!black, mark=square*, dashed] coordinates {
+    (1,0.890) (2,0.908) (3,0.918) (4,0.925) (5,0.930)
+};
+\legend{Train F1, Val F1}
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\caption{Training convergence on Eclipse dataset showing (left) loss curves and (right) F1 score progression over 5 epochs.}
+\label{fig:convergence_eclipse}
+\end{figure*}

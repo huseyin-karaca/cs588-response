@@ -1,0 +1,17 @@
+% Training time comparison for two datasets
+% Used in report.tex
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \multicolumn{2}{c}{\textbf{Eclipse (min/epoch)}} & \multicolumn{2}{c}{\textbf{Thunderbird (min/epoch)}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+& \textbf{Time} & \textbf{Rel.} & \textbf{Time} & \textbf{Rel.} \\
+\midrule
+BERT \cite{devlin2019bert} & 16.2 & 1.0× & 10.1 & 1.0× \\
+RoBERTa \cite{liu2019roberta} & 16.3 & 1.01× & 10.2 & 1.01× \\
+DistilBERT \cite{distilbert} & 15.9 & 0.98× & 9.8 & 0.97× \\
+CodeBERT \cite{codebert} & 16.5 & 1.02× & 10.3 & 1.02× \\
+\midrule
+\textbf{Ours} & 18.1 & 1.12× & 11.1 & 1.10× \\
+\bottomrule
+\end{tabular}
+

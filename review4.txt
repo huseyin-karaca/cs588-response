@@ -1,0 +1,116 @@
+Reviewer 4
+Overall Recommendation: Weak Accept
+
+Hakeme, çalışmamızın teknik titizliğini (rigor) ve matematiksel anlatımını takdir ettiği, ayrıca önerilen yöntemin gerçek dünya senaryolarındaki uygulanabilirliğini (etiketsiz veri kullanımı) bir güçlü yan olarak belirttiği için teşekkür ederiz. Eleştirilen organizasyonel ve terminolojik kısımlar, makalenin kalitesini artırmak adına titizlikle revize edilmiştir.
+
+Comment 4.1: Some parts of the paper seem to be organized inappropriately; especially the Problem Description and Motivation section reads like a summary of the methodology.
+Response: Hakemimize bu yapısal eleştirisi için teşekkür ederiz. 2. Bölümün (Problem Description and Motivation) metodoloji özeti gibi algılanmaması için bu bölümü, teknik motivasyona ve mevcut yaklaşımların (özellikle veri kıtlığı durumunda LLM'lerin) kısıtlamalarına odaklanacak şekilde yeniden yapılandırdık.
+Revision: Bölüm 2, problem tanımını netleştiren ve neden grafik tabanlı bir yarı-denetimli öğrenmeye ihtiyaç duyulduğunu teknik örneklerle açıklayan içerikle güncellenmiştir.
+
+Comment 4.2: The authors do not incorporate semantic similarity between bug report descriptions when constructing the graph, which forgoes a significant data source when extracting semantic meaning from bug reports.
+Response: Hakemin bu teknik tespiti oldukça yerindedir. Mevcut çalışmada hesaplama verimliliği adına grafik kenarları sadece başlıklar (titles) üzerinden kurulmuştur. Açıklamaların (descriptions) eklenmesinin gürültü miktarını artırabileceği endişesiyle bu tercih yapılmıştır. Ancak bu durumun bir kısıtlama olduğunu kabul ediyoruz.
+Revision: Bölüm 6 (Challenges and Future Work) kısmına, "açıklama" metinlerinin graf yapısına dahil edilmesinin potansiyel etkileri üzerine teknik bir tartışma ve gelecek çalışma planı eklenmiştir.
+
+Comment 4.3: The affiliation markers next to the authors’ names are not necessary when the affiliation is explicitly stated under the names.
+Response: Hakemin biçimsel uyarısı dikkate alınmıştır. Gereksiz marker'lar kaldırılarak görsel karmaşa giderilmiştir.
+Revision: Başlık sayfasındaki yazar isimlerinin yanındaki affiliation marker'lar kaldırılmıştır.
+
+Comment 4.4: Line 39: This is the first time the authors have used the abbreviation GCN. The authors should define what it means.
+Response: Terminoloji ve kısaltmaların ilk kullanımda tanımlanması kuralı gözden kaçmıştır. Uyarı için teşekkürler.
+Revision: GCN (Graph Convolutional Network) ifadesi, metinde ilk geçtiği yerde açık ismiyle tanımlanmıştır.
+
+Comment 4.5: Line 97: Is “issue” the appropriate keyword here? Wouldn’t “bug report” be better?
+Response: Hakemin terminolojik önerisi kabul edilmiştir.
+Revision: Anahtar kelimelerdeki "issue" ifadesi "Bug Report" olarak güncellenmiştir.
+
+Comment 4.6: General notes on Introduction: The authors need to choose between “bug repository” and “issue tracking system/issue database.” These seem to refer to the same thing.
+Response: Hakemin terminolojik tutarlılık önerisi kabul edilmiştir. Literatürle uyum adına "bug repository" terimi üzerinde karar kılınmıştır.
+Revision: Metin boyunca "issue tracking system" ve benzeri ifadeler tutarlılık adına "bug repository" ile değiştirilmiştir.
+
+Comment 4.7: Lines 110-111: “…it has been noticed that there exist overlapping software issue reports from diverse users.” This sentence is very clunky and should be rephrased to be clearer.
+Response: Hakeme bu eksikliği dikkatimize sunduğu için teşekkür ederiz. İfade daha akıcı hale getirilmiştir.
+Revision: İlgili cümle, raporların çakışmasını daha net ifade edecek şekilde revize edilmiştir.
+
+Comment 4.8: Line 112: “…enlargement of the size of the software issue-reporting databases.” This phrase should be rewritten (e.g., “increase of bug reports in software issue-reporting databases”).
+Response: Öneri için teşekkür ederiz. Dil kullanımı revize edilmiştir.
+Revision: İfade "increase of bug reports in software issue-reporting databases" olarak güncellenmiştir.
+
+Comment 4.9: Line 118: What are “software duplicates”?
+Response: İfadenin belirsizliği giderilmiştir.
+Revision: "Software duplicates" terimi yerine "duplicate bug reports" kullanılmıştır.
+
+Comment 4.10: Line 119: “bug duplicates” should be “duplicate bug reports”.
+Response: Uyarı dikkate alınmıştır.
+Revision: İlgili kısım "duplicate bug reports" olarak düzeltilmiştir.
+
+Comment 4.11: Lines 163-172: This paragraph should not be in the introduction. The authors can place it into section six or seven.
+Response: Hakeme hak veriyoruz; çalışmanın kısıtlamalarıyla ilgili olan bu paragraf giriş bölümünün akışını bozmaktadır.
+Revision: İlgili paragraf Giriş'ten kaldırılarak Bölüm 6'daki "Challenges and Future Work" kısmına entegre edilmiştir.
+
+Comment 4.12: General notes on Section 2: The problem description does not describe the core "duplicate bug report detection" problem and lacks any examples showing the desired operation. Still, you should have (even conceptual) examples where existing LLM approaches fail due to insufficient data.
+Response: Hakemimize bu yapısal eleştirisi için teşekkür ederiz. Bölüm 2, problem tanımını netleştiren ve mevcut yaklaşımların veri kıtlığı durumunda neden yetersiz kaldığını açıklayan örneklerle yeniden yapılandırılmıştır.
+Revision: Bölüm 2'ye DBRD problemini tanımlayan ve LLM'lerin etiketli veri kısıtı altındaki başarısızlık senaryolarını ele alan kısımlar eklenmiştir.
+
+Comment 4.13: Line 228: This is the first time “DBRD” is being mentioned. The authors should define the meaning of the abbreviation.
+Response: Kısaltma tanımı eklenmiştir.
+Revision: DBRD (Duplicate Bug Report Detection) kısaltması ilk geçtiği yerde tanımlanmıştır.
+
+Comment 4.14: General notes on Related Work: The last two paragraphs could be moved to a subsection titled “Positioning of the study in the literature”.
+Response: Literatürdeki konumlandırmanın ayrı bir başlık altında verilmesi önerisi kabul edilmiştir.
+Revision: Bölüm 3.4'ün sonuna "Positioning of the study in the literature" alt başlığı eklenmiştir.
+
+Comment 4.15: Lines 283-284: What does the N in  refer to?
+Response: Değişken tanımı netleştirilmiştir.
+Revision:  ifadesinin toplam rapor sayısını (number of bug reports) temsil ettiği belirtilmiştir.
+
+Comment 4.16: Line 390: “ie.” Should be “i.e.”
+Response: Yazım hatası düzeltilmiştir.
+Revision: "ie." ifadesi "i.e." olarak güncellenmiştir.
+
+Comment 4.17: Line 394: There should not be a space after “Validation” as a comma follows it.
+Response: Noktalama hatası düzeltilmiştir.
+Revision: "Validation ," ifadesindeki boşluk kaldırılmıştır.
+
+Comment 4.18: Line 453: There should be a comma after “Graph Construction”.
+Response: Eksik virgül eklenmiştir.
+Revision: İlgili başlık "Graph Construction, Embedding Construction" olarak güncellenmiştir.
+
+Comment 4.19: Figure 1 (Page 5): The caption mentions a “middle” section of the figure, but such a section does not exist. The figure also features some very thin dotted lines.
+Response: Figür 1'deki görsel hatalar ve caption tutarsızlığı düzeltilmiştir.
+Revision: Figür 1'deki rendering hataları giderilmiş ve caption "Middle" yerine figürdeki bölümleri (Embedding Construction and Training) doğru yansıtacak şekilde revize edilmiştir.
+
+Comment 4.20: Lines 715-716: “Eclipse Platform” and “Mozilla Thunderbird” are the names of the software projects, not the datasets.
+Response: Proje ve veri seti ayrımı netleştirilmiştir.
+Revision: İlgili cümlede Eclipse ve Thunderbird'ün yazılım projeleri olduğu, veri setlerinin bu projelerden türetildiği belirtilmiştir.
+
+Comment 4.21: Line 718: “It can be referred to Table 2 for details.” is not correct English. This phrase could be replaced by “Table 2 can be referred to for details,” or “Refer to Table 2 for details.”
+Response: Dil hatası düzeltilmiştir.
+Revision: İfade "Refer to Table 2 for details" olarak güncellenmiştir.
+
+Comment 4.22: The authors should be clearer about where labeled vs. unlabeled bug reports are used during the experiments.
+Response: Etiketli ve etiketsiz verinin kullanımı hakkındaki belirsizlik giderilmiştir.
+Revision: Bölüm 5'e hangi verilerin denetimli (supervised) eğitimde, hangilerinin ise sadece graf mesaj iletiminde (unlabeled) kullanıldığına dair net açıklamalar eklenmiştir.
+
+Comment 4.23: Line 763: What is the validation performance threshold for early stopping?
+Response: Erken durdurma kriteri eklenmiştir.
+Revision: Metne, "validation loss değerinde 3 epoch boyunca iyileşme olmaması" (patience=3) durumunda eğitimin durdurulduğu bilgisi eklenmiştir.
+
+Comment 4.24: Line 781: Replace “codes” with “source code”.
+Response: Terminoloji düzeltilmiştir.
+Revision: "codes" ifadesi "source code" ile değiştirilmiştir.
+
+Comment 4.25: Line 810: There should not be a space after “scores”.
+Response: Noktalama hatası düzeltilmiştir.
+Revision: "scores ," ifadesindeki gereksiz boşluk kaldırılmıştır.
+
+Comment 4.26: Subsection 5.4: The authors should explicitly refer the reader to Figures 3 and 4 since these figures are relevant to the text in this section.
+Response: Figür referansları eklenmiştir.
+Revision: Bölüm 5.4'ün girişine "Refer to Figures 3 and 4 for the detailed convergence plots..." ifadesi eklenmiştir.
+
+Comment 4.27: Line 1020: “issue reports” should be “bug reports”.
+Response: Terminoloji tutarlılığı sağlanmıştır.
+Revision: "issue reports" ifadesi "bug reports" olarak güncellenmiştir.
+
+Comment 4.28: Scalability of graph construction: Suggest researching distributed computing strategies for graph construction and storage (multiple GPUs or machines).
+Response: Hakemimize bu vizyoner önerisi için teşekkür ederiz.
+Revision: Bölüm 6'ya distributed graph construction ve multi-GPU processing stratejilerinin büyük ölçekli depolar için bir çözüm yolu olduğuna dair bir tartışma eklenmiştir.
