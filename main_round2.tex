@@ -74,7 +74,7 @@
 \acmISBN{978-1-4503-XXXX-X/2018/06}
 
 \usepackage{xcolor}
-\usepackage{hyperref}
+
 \usepackage{fontawesome}
 %%
 %% Submission ID.
@@ -96,15 +96,20 @@
 %% the biblatex styles.
 %%
 
+% try to include names of references
+\usepackage{clipboard}
+\usepackage{nameref}
+\usepackage{hyperref} % Çoğu zaman en son bu gelmeli
+
 \usepackage{tikz}
 \usepackage{pgfplots}
-\usepackage{clipboard}
+
 \newclipboard{manuscript}
 
 % Revised macro for auto-sync with response letter
 \newcommand{\revised}[2]{%
     % A. GÖRSEL KISIM: Metni PDF'e mavi renkte basar
-    \textcolor{blue}{#2 (Reviewers #1)}%
+    \textcolor{blue}{#2 (Reviews #1)}%
     %
     % B. MANTIKSAL KISIM: Her ID için clipboard'a kopyalar
     \renewcommand{\do}[1]{%
@@ -156,7 +161,7 @@
 
 \author{H\"useyin Karaca}
 \email{huseyin.karaca@bilkent.edu.tr}
-\authornotemark[2]
+\authornotemark[0]
 \affiliation{%
  \institution{Bilkent University}
   \institution{Dept. of Electrical and Electronics Engineering}
@@ -168,7 +173,7 @@
 
 \author{Emirhan Ko\c{c}}
 \email{emirhan.koc@bilkent.edu.tr}
-\authornotemark[2]
+\authornotemark[0]
 \affiliation{%
  \institution{Bilkent University}
   \institution{Dept. of Electrical and Electronics Engineering}
@@ -178,7 +183,7 @@
 
 \author{Hasan Erkin Ünlü}
 \email{erkin.unlu@bilkent.edu.tr}
-\authornotemark[2]
+\authornotemark[0]
 \affiliation{%
  \institution{Bilkent University}
   \institution{Dept. of Electrical and Electronics Engineering}
@@ -189,7 +194,7 @@
 
 \author{Rabia Ela Ünlü}
 \email{ela.unlu@bilkent.edu.tr}
-\authornotemark[2]
+\authornotemark[0]
 \affiliation{%
  \institution{Bilkent University}
   \institution{Dept. of Electrical and Electronics Engineering}
@@ -235,7 +240,7 @@
 \label{sec:abstract}
 \textbf{Context.} Duplicate bug report detection aims to identify issue reports that describe the same underlying problem or can be resolved by the same fix. In large-scale repositories, duplicates increase triage workload and waste developer time. While transformer-based sentence encoders improve semantic matching compared to classical IR baselines, they rely on labeled duplicate pairs, which are typically scarce in real-world repositories. Moreover, exhaustive pairwise training is computationally infeasible and cannot effectively incorporate the full pool of unlabeled reports.
 
-\textbf{Method.} We propose a semi-supervised Graph-Enhanced Transformer framework that couples transformer-based semantic encoding with graph-based message passing. We represent the full corpus (train/validation/test) as nodes in a title-similarity graph built from \texttt{bert-base-uncased} title embeddings; to obtain a more informative similarity geometry, we apply PCA before computing similarities (thresholding can be used as an optional sparsification step). During training, transformer \texttt{[CLS]} embeddings are projected to a compact space and injected into a two-layer \revised{4.5}{Graph Convolutional Network (GCN)}, enabling information propagation from supervised nodes to the unlabeled portion of the corpus. Supervision is applied only on a feasible subset of labeled positive pairs and sampled negatives via a cosine embedding objective, while the remaining unlabeled reports contribute indirectly through graph propagation. For evaluation, model parameters are frozen and pairwise predictions are obtained by thresholding cosine similarity, where the decision threshold is selected on the validation split.
+\textbf{Method.} We propose a semi-supervised Graph-Enhanced Transformer framework that couples transformer-based semantic encoding with graph-based message passing. We represent the full corpus (train/validation/test) as nodes in a title-similarity graph built from \texttt{bert-base-uncased} title embeddings; to obtain a more informative similarity geometry, we apply PCA before computing similarities (thresholding can be used as an optional sparsification step). During training, transformer \texttt{[CLS]} embeddings are projected to a compact space and injected into a two-layer \revised{1.3a}{Graph Convolutional Network (GCN)}, enabling information propagation from supervised nodes to the unlabeled portion of the corpus. Supervision is applied only on a feasible subset of labeled positive pairs and sampled negatives via a cosine embedding objective, while the remaining unlabeled reports contribute indirectly through graph propagation. For evaluation, model parameters are frozen and pairwise predictions are obtained by thresholding cosine similarity, where the decision threshold is selected on the validation split.
 
 \textbf{Results.} Experiments on Eclipse Platform and Mozilla Thunderbird show that graph propagation enables the model to benefit from unlabeled reports under label-scarce conditions, yielding stable training dynamics and competitive classification performance relative to transformer-only baselines. Source code and data are publicly available at the project repository.\footnote{\url{https://github.com/huseyin-karaca/graph-enhanced-dbd.git}}
 
@@ -283,10 +288,8 @@
 %%
 %% Keywords. The author(s) should pick words that accurately describe
 %% the work being presented. Separate the keywords with commas.
-\keywords{Bug Report, Bug Duplicate Detection, Transformers, BERT, LLMs, Graph Neural Networks, Semi-Supervised Learning}
-
 \label{sec:keywords}
-\revised{4.6}{Changed ``Issue'' to ``Bug Report'' and properly capitalized ``Semi-Supervised Learning'' for consistency with standard terminology.}
+\keywords{Bug Report, Bug Duplicate Detection, Transformers, BERT, LLMs, Graph Neural Networks, Semi-Supervised Learning}
 
 
 \received{16 November 2025}
@@ -299,7 +302,7 @@
 \maketitle
 
 \section{Introduction} \label{sec:introduction}
-In large software developments, issue-tracking systems are used as a tool for handling software issue reports, as well as handling software feature requests. In the course of time, as software issue-reporting databases continue to expand, it has been noticed that there exist overlapping software issue reports from diverse users. This results in the enlargement of the size of the software issue-reporting databases, as well as consuming the time of software developers in examining the same software issues, as these overlapping software issue reports are nothing but software duplicates. Studies show that a large number of bug duplicates exist in bug repositories; \revised{3.6,1.3}{for example, 20\% of reports in Eclipse and 30\% in Firefox were marked as duplicate} \cite{anvik}.
+In large software developments, issue-tracking systems are used as a tool for handling software issue reports, as well as handling software feature requests. In the course of time, as software issue-reporting databases continue to expand, it has been noticed that there exist overlapping software issue reports from diverse users. This results in the enlargement of the size of the software issue-reporting databases, as well as consuming the time of software developers in examining the same software issues, as these overlapping software issue reports are nothing but software duplicates. Studies show that a large number of bug duplicates exist in bug repositories; \revised{1.3b, 2.6, 3.7}{for example, 20\% of reports in Eclipse and 30\% in Firefox were marked as duplicate} \cite{anvik}.
 
 Automating duplicate bug report detection has therefore become an essential research direction in software engineering. Classical information retrieval (IR) techniques such as Term Frequency–Inverse Document Frequency (TF-IDF), Best Matching 25 with field weighting (BM25F), and custom retrieval functions (e.g., REP) have been widely used to match new bug reports with existing ones \cite{sun2011towards}. 
 
@@ -342,7 +345,7 @@ This study offers the following contributions:
 
 \section{Problem Description and Motivation} \label{sec:problem_description}
 
-\revised{3.1,4.1,4.2}{The core challenge in Duplicate Bug Report Detection (DBRD) is to automatically identify whether two bug reports describe the same underlying issue. In formal terms, given a pair of reports $(r_i, r_j)$, the task is to predict whether they belong to the same duplicate group. This problem is inherently difficult due to lexical variations, incomplete descriptions, and domain-specific terminology that may differ across reporters.
+\revised{3.6,4.1,4.2}{The core challenge in Duplicate Bug Report Detection (DBRD) is to automatically identify whether two bug reports describe the same underlying issue. In formal terms, given a pair of reports $(r_i, r_j)$, the task is to predict whether they belong to the same duplicate group. This problem is inherently difficult due to lexical variations, incomplete descriptions, and domain-specific terminology that may differ across reporters.
 
 Transformer-based sentence encoders, such as BERT and its variants, have demonstrated strong semantic representations for text matching tasks. However, these models are inherently limited in their ability to exploit unlabeled data beyond implicit pretraining on general-domain corpora. In practical duplicate bug report detection settings, this limitation becomes critical: labeled duplicate pairs are scarce and expensive to obtain, while the majority of available bug reports remain unlabeled. Consider a repository with tens of thousands of bug reports where only a few hundred duplicate relationships have been manually confirmed. Traditional supervised learning approaches would discard the vast majority of this data, utilizing only the small labeled subset.
 
@@ -415,7 +418,7 @@ SBERT \cite{reimers2019sentencebert} & Transformer (Siamese Bi-Encoder) & Deep C
 
 While the aforementioned models have progressively advanced semantic understanding, they remain almost exclusively \textit{supervised}, requiring large, costly datasets of labeled duplicate pairs. As noted in recent studies, transformer models like BERT and its variants (ALBERT, RoBERTa) excel when data is plentiful, but their performance is limited in the more realistic, label-scarce environments common to bug repositories \cite{meng2024}. Furthermore, as GNNs emerge as a new frontier, existing applications are often \textit{transductive}, meaning they cannot perform inference on new, unseen bug reports without retraining \cite{hamilton2017inductive}.
 
-Our proposed framework addresses these two specific, critical gaps: (1) label scarcity and (2) inference scalability. We operate in a \textit{semi-supervised} setting, using a GNN to leverage the vast majority of \textit{unlabeled} reports during training. Crucially, our method remains \textit{inductive} and scalable by design: the GNN is used only as a training-time enhancement and is discarded for inference, where only the efficient transformer encoder is needed. This hybrid approach aims to achieve the semantic richness of deep transformers, enhanced by the relational context from unlabeled data, while preserving the high-speed inference of an SBERT-like bi-encoder. Table \ref{tab:model_comparison} outlines this positioning relative to closely related works.
+Our proposed framework addresses these two specific, critical gaps: (1) label scarcity and (2) inference scalability. We operate in a \textit{semi-supervised} setting, using a GNN to leverage the vast majority of \textit{unlabeled} reports during training. \revised{2.2b}{Crucially, our method remains \textit{inductive} and scalable by design: the GNN is used only as a training-time enhancement and is discarded for inference, where only the efficient transformer encoder is needed. This hybrid approach aims to achieve the semantic richness of deep transformers, enhanced by the relational context from unlabeled data, while preserving the high-speed inference of an SBERT-like bi-encoder.} Table \ref{tab:model_comparison} outlines this positioning relative to closely related works.
 
 
 Stepping back, we view DBRD as both a semantic and a relational problem. In the next section, we model the bug repository as a graph and use an inductive GNN (e.g., GraphSAGE) to produce embeddings for unseen reports without retraining \cite{hamilton2017inductive}. To deal with limited supervision and sharpen the decision boundary, we add two simple training aids: generative augmentation to create within-class variants \cite{antoniou2017dagan} and hard-negative mining to focus the model on near-miss non-duplicates. We detail the architecture and training strategy in the next section.
@@ -429,12 +432,12 @@ Stepping back, we view DBRD as both a semantic and a relational problem. In the 
     \label{fig:main_figure}
 \end{figure*}
 
-\revised{4.9}{In Figure 1, corrected the formatting from ``token id's'' to ``token IDs'' following standard conventions.}
+\revised{1.3d}{In Figure 1, corrected the formatting from ``token id's'' to ``token IDs'' following standard conventions.}
 
 
 \section{Proposed Method}
 
-We introduce a semi-supervised GNN augmented transformer-encoder framework for identification of duplicate bug reports, where the model is trained primarily in positive-pair supervision with a regularization strategy, \revised{1.7,4.8}{i.e., the negative pair sampling}. Overall, the pipeline consists of three main stages: (i) Data Processing, where duplicate labels are transformed into positive training pairs and all remaining pairs are treated as candidate negatives; (ii) Embedding Construction, Training as well as Validation, where a transformer encoder learns similarity-preserving representations using a binary similarity objective; and (iii) Inference, where the model is tested on untrained positive and negative pairs. The overall schematic encompassing data processing, embedding construction, information transfer to the GNN and training is illustrated in Fig. \ref{fig:main_figure}. The description and formal definition of each stage is provided as follows:
+We introduce a semi-supervised GNN augmented transformer-encoder framework for identification of duplicate bug reports, where the model is trained primarily in positive-pair supervision with a regularization strategy, \revised{1.3c,4.8}{i.e., the negative pair sampling}. Overall, the pipeline consists of three main stages: (i) Data Processing, where duplicate labels are transformed into positive training pairs and all remaining pairs are treated as candidate negatives; (ii) Embedding Construction, Training as well as Validation, where a transformer encoder learns similarity-preserving representations using a binary similarity objective; and (iii) Inference, where the model is tested on untrained positive and negative pairs. The overall schematic encompassing data processing, embedding construction, information transfer to the GNN and training is illustrated in Fig. \ref{fig:main_figure}. The description and formal definition of each stage is provided as follows:
 
 
 \paragraph{Pair Construction.}
@@ -720,7 +723,7 @@ For training, we use the AdamW optimizer with a learning rate of $2 \times 10^{-
 
 Graph construction is performed using semantic similarity computed from issue titles encoded with a pretrained \texttt{bert-base-uncased} model. Similarity is computed directly on these title embeddings after PCA-based dimensionality reduction, and no explicit threshold is applied for edge selection. This design choice allows dense and flexible connectivity in the graph while avoiding sensitivity to threshold tuning.
 
-All experiments were conducted on a single NVIDIA high performance A100 GPU with 80 GB VRAM. \revised{4.13}{All source code and the full reproducibility package, including all necessary data files and scripts, can be found in the \href{https://github.com/huseyin-karaca/graph-enhanced-dbd.git}{huseyin-karaca/graph-enhanced-dbd GitHub repository \faLink}.}
+All experiments were conducted on a single NVIDIA high performance A100 GPU with 80 GB VRAM. \revised{1.4}{All source code and the full reproducibility package, including all necessary data files and scripts, can be found in the \href{https://github.com/huseyin-karaca/graph-enhanced-dbd.git}{huseyin-karaca/graph-enhanced-dbd GitHub repository \faLink}.}
 
 \subsection{Results}
 
@@ -812,7 +815,7 @@ On the Eclipse dataset, our model reaches an F1 score of \textbf{0.924} (precisi
 
 These results confirm that incorporating unlabeled data through graph structures allows the model to maintain state-of-the-art accuracy. Unlike the previous iterations where a performance gap was observed, the optimized graph construction and training strategy now yield results indistinguishable from strong baselines.
 
-\revised{2.4,2.8}{It is important to emphasize that the goal of this work is not merely to achieve marginal numerical improvements over existing baselines, but rather to demonstrate that a graph-enhanced semi-supervised framework can reach competitive performance while explicitly leveraging unlabeled data during training. The fact that our approach matches or closely approximates the performance of heavily-optimized, fully-supervised transformer models while incorporating structural information from unlabeled reports represents a meaningful contribution. This validates the architectural concept and establishes that graph-based semi-supervised learning is a viable path forward for duplicate bug report detection in label-scarce settings, even if the current instantiation does not universally outperform all baselines.}
+\revised{2.4, 3.8}{It is important to emphasize that the goal of this work is not merely to achieve marginal numerical improvements over existing baselines, but rather to demonstrate that a graph-enhanced semi-supervised framework can reach competitive performance while explicitly leveraging unlabeled data during training. The fact that our approach matches or closely approximates the performance of heavily-optimized, fully-supervised transformer models while incorporating structural information from unlabeled reports represents a meaningful contribution. This validates the architectural concept and establishes that graph-based semi-supervised learning is a viable path forward for duplicate bug report detection in label-scarce settings, even if the current instantiation does not universally outperform all baselines.}
 
 To better understand the error distribution, we analyze the confusion matrices for both datasets (Figure \ref{fig:confusion_matrices}). On Eclipse, our model maintains a balanced error rate, successfully identifying the vast majority of duplicate pairs. On Thunderbird, the high precision and recall scores translate to a very low rate of false positives and false negatives, consistent with the 0.957 F1 score. The balanced performance across both metrics indicates that the model does not suffer from significant bias toward either class.
 
@@ -834,7 +837,7 @@ To better understand the error distribution, we analyze the confusion matrices f
 
 \subsection{Training Dynamics Analysis}
 
-To gain deeper insights into the learning behavior, we analyze the training convergence patterns across 5 training epochs for both our model and the RoBERTa baseline on both datasets. \revised{1.5,4.11}{The detailed convergence plots are shown in Figures 3 and 4 for Eclipse and Thunderbird datasets, respectively.}
+To gain deeper insights into the learning behavior, we analyze the training convergence patterns across 5 training epochs for both our model and the RoBERTa baseline on both datasets. \revised{1.1,4.11}{The detailed convergence plots are shown in Figures 3 and 4 for Eclipse and Thunderbird datasets, respectively.}
 
 On Eclipse, our model exhibits smooth convergence with training loss decreasing from 0.125 to 0.032 and validation loss from 0.085 to 0.038 over 5 epochs. The F1 scores show steady improvement, with training F1 reaching 0.933 and validation F1 achieving 0.930 by epoch 5. The close alignment between training and validation metrics suggests minimal overfitting. RoBERTa shows similar convergence patterns, with training loss decreasing from 0.120 to 0.030 and achieving slightly higher final F1 scores (0.920 train, 0.920 validation).
 
@@ -874,22 +877,22 @@ In addition, computational constraints limited the extent of hyperparameter expl
 The current framework assumes a graph constructed over a fixed set of reports. In real-world deployment scenarios, newly submitted bug reports may arrive without existing connections to the graph. Reconstructing or incrementally updating the graph for each new report may not always be practical. An alternative approach is to confine graph-based learning to the offline training stage, while performing inference solely using the transformer encoder by matching unseen reports against stored embeddings. Investigating such deployment-oriented designs is a promising avenue for extending the applicability of the proposed approach.
 
 \paragraph{Label-Scarce Validation and Inference Latency.}
-\revised{2.1,2.5,2.2,2.6}{While the current experiments use full training datasets, a key motivation for graph-based semi-supervised learning is its potential effectiveness under label-scarce conditions. Future work should include experiments with reduced training set sizes (e.g., 5\% or 10\% of labeled data) to empirically validate the claim that graph propagation provides concrete benefits when annotations are limited. Additionally, while we have characterized training-time overhead, future work should include detailed inference latency measurements (e.g., milliseconds per query) comparing the proposed method against baselines, providing quantitative evidence for the inference scalability claims made in RQ2.}
+\revised{2.1,2.5,2.2a}{While the current experiments use full training datasets, a key motivation for graph-based semi-supervised learning is its potential effectiveness under label-scarce conditions. Future work should include experiments with reduced training set sizes (e.g., 5\% or 10\% of labeled data) to empirically validate the claim that graph propagation provides concrete benefits when annotations are limited. Additionally, while we have characterized training-time overhead, future work should include detailed inference latency measurements (e.g., milliseconds per query) comparing the proposed method against baselines, providing quantitative evidence for the inference scalability claims made in RQ2.}
 
 \paragraph{Hyperparameter Sensitivity and Ablation Studies.}
-\revised{1.6,2.3,2.7,3.7}{Several hyperparameters in our framework were fixed based on preliminary experiments without exhaustive ablation studies. The PCA dimensionality (d=10), projection dimension (D=128), fusion weight ($\lambda$), margin (m) in the loss function, and number of training epochs all warrant systematic sensitivity analysis. In particular, the aggressive dimensionality reduction from 768 to 10 dimensions via PCA was chosen empirically to improve discrimination but may introduce information loss. Future work should explore different values of d (e.g., 5, 20, 50, 100) and characterize the trade-off between noise reduction and information preservation across different datasets. Such ablation studies would provide data-driven justification for hyperparameter choices and reveal the robustness of the proposed framework.}
+\revised{1.2, 2.3, 2.7, 3.2}{Several hyperparameters in our framework were fixed based on preliminary experiments without exhaustive ablation studies. The PCA dimensionality (d=10), projection dimension (D=128), fusion weight ($\lambda$), margin (m) in the loss function, and number of training epochs all warrant systematic sensitivity analysis. In particular, the aggressive dimensionality reduction from 768 to 10 dimensions via PCA was chosen empirically to improve discrimination but may introduce information loss. Future work should explore different values of d (e.g., 5, 20, 50, 100) and characterize the trade-off between noise reduction and information preservation across different datasets. Such ablation studies would provide data-driven justification for hyperparameter choices and reveal the robustness of the proposed framework.}
 
 \paragraph{Hard Negative Mining and Advanced Sampling.}
-\revised{3.2,3.8}{The current negative sampling strategy combines anchor-based pairing with random sampling across duplicate groups. While this ensures balanced representation of positive and negative examples, it may over-represent easy negatives---report pairs that are clearly dissimilar. Hard negative mining, which focuses on difficult non-duplicates (reports that appear similar but describe different issues), could improve the model's ability to learn fine-grained decision boundaries. Future work should explore curriculum-based training strategies that progressively introduce harder negatives, or employ similarity-based negative sampling to deliberately select challenging negative pairs.}
+\revised{3.3}{The current negative sampling strategy combines anchor-based pairing with random sampling across duplicate groups. While this ensures balanced representation of positive and negative examples, it may over-represent easy negatives---report pairs that are clearly dissimilar. Hard negative mining, which focuses on difficult non-duplicates (reports that appear similar but describe different issues), could improve the model's ability to learn fine-grained decision boundaries. Future work should explore curriculum-based training strategies that progressively introduce harder negatives, or employ similarity-based negative sampling to deliberately select challenging negative pairs.}
 
 \paragraph{Incorporating Descriptions in Graph Construction.}
-\revised{3.3,4.3}{In this work, graph edges are constructed based solely on semantic similarity of bug report titles. While titles provide concise summaries, they are often brief, vague, and incomplete compared to full descriptions. Incorporating description text when computing semantic similarity for edge formation could yield substantially richer relational structures. However, this introduces computational challenges (longer sequences, higher memory requirements) and potential noise (descriptions may contain less relevant information). Future work should explore hybrid approaches that weight title and description similarity, or use multi-view graph construction that creates separate edge types based on different text fields.}
+\revised{3.1,4.3}{In this work, graph edges are constructed based solely on semantic similarity of bug report titles. While titles provide concise summaries, they are often brief, vague, and incomplete compared to full descriptions. Incorporating description text when computing semantic similarity for edge formation could yield substantially richer relational structures. However, this introduces computational challenges (longer sequences, higher memory requirements) and potential noise (descriptions may contain less relevant information). Future work should explore hybrid approaches that weight title and description similarity, or use multi-view graph construction that creates separate edge types based on different text fields.}
 
 \paragraph{Evaluation on Diverse Datasets.}
-\revised{3.4}{Our evaluation is limited to two benchmark datasets from large, open-source projects (Eclipse and Thunderbird). These repositories may exhibit similar reporting cultures and technical domains. To assess the generalizability of the proposed framework, future work should evaluate performance on a more diverse set of repositories, including smaller projects, proprietary software systems, and domains with different bug reporting guidelines (e.g., mobile applications, embedded systems, web services). Cross-domain evaluation would reveal whether the graph-enhanced approach is robust to variations in vocabulary, reporting style, and duplicate patterns.}
+\revised{3.5}{Our evaluation is limited to two benchmark datasets from large, open-source projects (Eclipse and Thunderbird). These repositories may exhibit similar reporting cultures and technical domains. To assess the generalizability of the proposed framework, future work should evaluate performance on a more diverse set of repositories, including smaller projects, proprietary software systems, and domains with different bug reporting guidelines (e.g., mobile applications, embedded systems, web services). Cross-domain evaluation would reveal whether the graph-enhanced approach is robust to variations in vocabulary, reporting style, and duplicate patterns.}
 
 \paragraph{Distributed Graph Construction and Storage.}
-\revised{3.5,3.9,4.14}{For extremely large bug repositories (e.g., hundreds of thousands or millions of reports), maintaining the full graph in memory on a single GPU becomes impractical. Future work should investigate distributed computing strategies for both graph construction and GNN training. Techniques such as graph partitioning across multiple GPUs or machines, distributed message passing frameworks (e.g., DistDGL, PyTorch Geometric distributed), and out-of-core graph storage could enable scaling to industrial-scale repositories. Additionally, approximate methods such as graph sampling or mini-batch GNN training on subgraphs could reduce memory footprint while maintaining representational quality.}
+\revised{3.4,3.9,4.14}{For extremely large bug repositories (e.g., hundreds of thousands or millions of reports), maintaining the full graph in memory on a single GPU becomes impractical. Future work should investigate distributed computing strategies for both graph construction and GNN training. Techniques such as graph partitioning across multiple GPUs or machines, distributed message passing frameworks (e.g., DistDGL, PyTorch Geometric distributed), and out-of-core graph storage could enable scaling to industrial-scale repositories. Additionally, approximate methods such as graph sampling or mini-batch GNN training on subgraphs could reduce memory footprint while maintaining representational quality.}
 
 \subsection{Threats to Validity}
 
@@ -901,7 +904,7 @@ Additionally, the use of a single train/validation/test split poses a threat to 
 
 Our evaluation is limited to two specific datasets: Eclipse Platform and Mozilla Thunderbird. While these are the de facto standard benchmarks in duplicate bug report detection literature, they represent open-source ecosystems with specific reporting cultures and terminologies. The performance of our graph-enhanced framework on proprietary software repositories or projects with significantly different bug reporting guidelines remains unverified.
 
-In this study, we relied on direct comparisons of Precision, Recall, and F1 scores. Due to the high computational cost of retraining graph-based models multiple times, we did not perform formal statistical significance testing (e.g., Wilcoxon signed-rank test) or k-fold cross-validation. Therefore, while our results match or exceed baselines in point estimates, we cannot statistically guarantee that small performance margins are not due to stochastic variance in model initialization or random data splitting. \revised{3.10}{Future work should include rigorous statistical validation through multiple random seeds, cross-validation, or paired significance tests to establish confidence in the observed performance differences.}
+In this study, we relied on direct comparisons of Precision, Recall, and F1 scores. Due to the high computational cost of retraining graph-based models multiple times, we did not perform formal statistical significance testing (e.g., Wilcoxon signed-rank test) or k-fold cross-validation. Therefore, while our results match or exceed baselines in point estimates, we cannot statistically guarantee that small performance margins are not due to stochastic variance in model initialization or random data splitting. Future work should include rigorous statistical validation through multiple random seeds, cross-validation, or paired significance tests to establish confidence in the observed performance differences.
 
 
 

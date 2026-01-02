@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex latex_build/main_round2"] 0 "latex_build/main_round2.aux" "latex_build/main_round2.bbl" "latex_build/main_round2" 1767353189.41733 -1
+["bibtex latex_build/main_round2"] 1767359692.38747 "latex_build/main_round2.aux" "latex_build/main_round2.bbl" "latex_build/main_round2" 1767361833.0051 0
   "./our-refs.bib" 1766679153.69347 14437 71d11de0927bc471ba2cfc859bf8da67 ""
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/acmart/ACM-Reference-Format.bst" 1680299675 90332 18dc4e5c9b5c2ddd337e9f97727d04f1 ""
-  "latex_build/main_round2.aux" 1767353188.87942 18293 f6c3a3fd69a60e67301df0aa1ba1015d "pdflatex"
+  "latex_build/main_round2.aux" 1767361832.49979 18143 d56a6975a1d15ab9bd300ee04c865352 "pdflatex"
   (generated)
   "latex_build/main_round2.bbl"
   "latex_build/main_round2.blg"
   (rewritten before read)
-["pdflatex"] 1767353187.14343 "/Users/huseyinkaraca/Desktop/cs588-response/main_round2.tex" "latex_build/main_round2.pdf" "main_round2" 1767353189.41746 2
-  "/Users/huseyinkaraca/Desktop/cs588-response/main_round2.tex" 1767353186.95206 80782 e2db5153237f9fac314d5cff4597bcc5 ""
+["pdflatex"] 1767361829.54015 "/Users/huseyinkaraca/Desktop/cs588-response/main_round2.tex" "latex_build/main_round2.pdf" "main_round2" 1767361833.00524 2
+  "/Users/huseyinkaraca/Desktop/cs588-response/main_round2.tex" 1767361829.28711 80731 a0684ac1ddf51bb2ad0a30dff32c4d2c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc" 1558214095 7693 0f2dce6d313c82989ec3a67fc24df2a0 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc" 1490131464 2921 8ca0eb0831f9bc5da080d3697cfe67bf ""
@@ -344,10 +344,10 @@
   "figures/report-performance-comparison.tex" 1767253868 780 75eb5fc1096801041de42d0ece38a93a ""
   "figures/report-similarity-examples.tex" 1767253868 707 4f593cee7168fc06fd4649924123cc13 ""
   "figures/report-time-comparison.tex" 1767253868 668 75ea7e8bd95c29b237c38f242159825b ""
-  "latex_build/main_round2.aux" 1767353188.87942 18293 f6c3a3fd69a60e67301df0aa1ba1015d "pdflatex"
-  "latex_build/main_round2.bbl" 1767350662.16312 20278 dcc582a536aff8867e81dd53bb654d3e "bibtex latex_build/main_round2"
-  "latex_build/main_round2.out" 1767353188.88051 3785 723fc85e6c77d752f36736991c40aafd "pdflatex"
-  "main_round2.tex" 1767353186.95206 80782 e2db5153237f9fac314d5cff4597bcc5 ""
+  "latex_build/main_round2.aux" 1767361832.49979 18143 d56a6975a1d15ab9bd300ee04c865352 "pdflatex"
+  "latex_build/main_round2.bbl" 1767359692.51901 20278 dcc582a536aff8867e81dd53bb654d3e "bibtex latex_build/main_round2"
+  "latex_build/main_round2.out" 1767361832.5016 3785 723fc85e6c77d752f36736991c40aafd "pdflatex"
+  "main_round2.tex" 1767361829.28711 80731 a0684ac1ddf51bb2ad0a30dff32c4d2c ""
   (generated)
   "latex_build/main_round2.aux"
   "latex_build/main_round2.log"
