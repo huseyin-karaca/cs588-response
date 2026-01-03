@@ -1,0 +1,100 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main_round1.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: our-refs.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty address in antoniou2017dagan
+Warning--empty publisher in chaparro2016
+Warning--empty address in chaparro2016
+Warning--empty publisher in deshmukh2017towards
+Warning--empty address in deshmukh2017towards
+Warning--empty publisher in devlin2019bert
+Warning--empty address in devlin2019bert
+Warning--empty address in hamilton2017inductive
+Warning--empty publisher in he2020dualchannel
+Warning--empty address in he2020dualchannel
+Warning--empty publisher in jalbert2008automated
+Warning--empty address in jalbert2008automated
+Warning--empty publisher in jiang2019semi
+Warning--empty address in jiang2019semi
+Warning--no number and no volume in kipf2016semi
+Warning--page numbers missing in both pages and numpages fields in kipf2016semi
+Warning--empty publisher in kipf2017gcn
+Warning--empty address in kipf2017gcn
+Warning--page numbers missing in both pages and numpages fields in kipf2017gcn
+Warning--no number and no volume in koc2025graphteacher
+Warning--page numbers missing in both pages and numpages fields in koc2025graphteacher
+Warning--no number and no volume in kocc2025scgrapht
+Warning--page numbers missing in both pages and numpages fields in kocc2025scgrapht
+Warning--empty publisher in eclipse-mozilla
+Warning--empty address in eclipse-mozilla
+Warning--empty publisher in lan2020albert
+Warning--empty address in lan2020albert
+Warning--page numbers missing in both pages and numpages fields in lan2020albert
+Warning--empty address in lee2023sbertdupbug
+Warning--page numbers missing in both pages and numpages fields in lee2023sbertdupbug
+Warning--no number and no volume in liu2019roberta
+Warning--page numbers missing in both pages and numpages fields in liu2019roberta
+Warning--empty publisher in malik2023dataaug
+Warning--empty address in malik2023dataaug
+Warning--page numbers missing in both pages and numpages fields in malik2023dataaug
+Warning--empty publisher in nguyen2012dbtm
+Warning--empty address in nguyen2012dbtm
+Warning--no number and no volume in poddar2019trainone
+Warning--page numbers missing in both pages and numpages fields in poddar2019trainone
+Warning--no number and no volume in reimers2019sbert
+Warning--page numbers missing in both pages and numpages fields in reimers2019sbert
+Warning--empty publisher in sun2011towards
+Warning--empty address in sun2011towards
+Warning--empty publisher in sun2010discriminative
+Warning--empty address in sun2010discriminative
+You've used 34 entries,
+            5981 wiz_defined-function locations,
+            1673 strings with 25619 characters,
+and the built_in function-call counts, 39093 in all, are:
+= -- 4594
+> -- 1366
+< -- 0
++ -- 475
+- -- 458
+* -- 2868
+:= -- 3795
+add.period$ -- 169
+call.type$ -- 34
+change.case$ -- 275
+chr.to.int$ -- 30
+cite$ -- 79
+duplicate$ -- 3538
+empty$ -- 2487
+format.name$ -- 578
+if$ -- 9380
+int.to.chr$ -- 6
+int.to.str$ -- 1
+missing$ -- 137
+newline$ -- 357
+num.names$ -- 234
+pop$ -- 1513
+preamble$ -- 1
+purify$ -- 535
+quote$ -- 0
+skip$ -- 1282
+stack$ -- 0
+substring$ -- 2762
+swap$ -- 323
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 847
+warning$ -- 45
+while$ -- 189
+width$ -- 0
+write$ -- 735
+(There were 45 warnings)

@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1767361967.11162 "/Users/huseyinkaraca/Desktop/cs588-response/response_letter.tex" "latex_build/response_letter.pdf" "response_letter" 1767361970.42865 0
-  "/Users/huseyinkaraca/Desktop/cs588-response/response_letter.tex" 1767361966.87192 17540 5a0a697d5bc5563c119c70f17e18c1ec ""
+["pdflatex"] 1767425460.05281 "/Users/huseyinkaraca/Desktop/cs588-response/response_letter.tex" "latex_build/response_letter.pdf" "response_letter" 1767425462.84745 0
+  "/Users/huseyinkaraca/Desktop/cs588-response/response_letter.tex" 1767425454.93555 17217 c65cf67e2efd2f9819739afd1dc51727 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -34,6 +34,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb" 1215737283 193571 dce9a978093738902238b3e227edef6c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb" 1215737283 145408 43d44302ca7d82d487f511f83e309505 ""
@@ -205,11 +206,12 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1712147339.2095 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1712147302 8221443 67138db2e6345e8bb6d0a74c215284d1 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "latex_build/main_round2.aux" 1767361832.49979 18143 d56a6975a1d15ab9bd300ee04c865352 ""
-  "latex_build/manuscript.cpy" 1767361832.50215 25077 3e4e4624e11dac37b1fb1aadac6b168a ""
-  "latex_build/response_letter.aux" 1767361970.23413 163 ef7f3dc0ed4ef38383ed1055d9638e96 "pdflatex"
-  "latex_build/response_letter.out" 1767361968.25477 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "response_letter.tex" 1767361966.87192 17540 5a0a697d5bc5563c119c70f17e18c1ec ""
+  "latex_build/main_round2.aux" 1767425459.40106 19345 f29d3ccd3c331cb4fa4e4dfdfe705997 ""
+  "latex_build/output-manuscript.cpy" 1767425459.40302 19706 e8ba492b2eec808e33702fa74c7b9fa9 ""
+  "latex_build/response_letter.aux" 1767425462.72703 163 62c90949c95a67d1864adc6ad28f76b9 "pdflatex"
+  "latex_build/response_letter.out" 1767425460.92822 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main_round2.tex" 1767425452.70505 86272 b62ff19d1d62e07076fca158b8f12eaa ""
+  "response_letter.tex" 1767425454.93555 17217 c65cf67e2efd2f9819739afd1dc51727 ""
   (generated)
   "latex_build/response_letter.aux"
   "latex_build/response_letter.log"

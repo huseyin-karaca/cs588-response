@@ -5,7 +5,7 @@
 % ------------------------------------------------
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[margin = 1in]{geometry}
+\usepackage[margin = 0.75in]{geometry}
 \usepackage{xcolor}
 \usepackage{amsmath}
 \usepackage[most]{tcolorbox}
@@ -16,11 +16,12 @@
 \usepackage{hyperref}
 \usepackage{fontawesome}
 
+
 % ------------------------------------------------
 % 2. Manuscript Connection
 % ------------------------------------------------
-\externaldocument{latex_build/main_round2}
-\openclipboard{latex_build/manuscript}
+\externaldocument{main_round2}
+\openclipboard{output-manuscript}
 
 % ------------------------------------------------
 % 3. Color Palette
@@ -173,12 +174,12 @@ We hope these revisions address all reviewer concerns and significantly improve 
 \begin{ReviewCycle}{ Review 1.3}
     \ReviewerText{Grammatical issues: GCN used before definition, keyword capitalization, ``ie.'' format, duplicated ``for example for example'', missing commas, and ``token id's'' formatting.}
     \AuthorResponse{We thank the reviewer for bringing these issues to our attention. We have systematically corrected all mentioned errors throughout the manuscript.}
-    \AutoRevision{1.3a,1.3b,1.3c,1.3d}
+    \AutoRevision{1.3a,1.3b,1.3c}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{ Review 1.4}
     \ReviewerText{The replication package is missing key files and the training notebook shows interrupted execution.}
-    \AuthorResponse{We thank the reviewer for this observation. We have updated our GitHub repository to include all necessary files for complete reproducibility and clarified the repository pointer in the manuscript.}
+    \AuthorResponse{We thank the reviewer for this observation. We have updated our GitHub repository to include all necessary files for complete reproducibility and clarified the repository pointer in the manuscript. We would like to point out that the repository README has a Google Drive link, containing preprocessing codes and checkpoints. These files are not included in the main GitHub repository to keep the size small and focus on the main code.}
     \AutoRevision{1.4}
 \end{ReviewCycle}
 
@@ -194,14 +195,14 @@ We hope these revisions address all reviewer concerns and significantly improve 
 
 \begin{ReviewCycle}{ Review 2.1}
     \ReviewerText{The paper claims to address ``label-scarce'' environments but uses full datasets. Experiments with reduced training set sizes (5\% or 10\% of labeled data) are needed.}
-    \AuthorResponse{We thank the reviewer for this important observation. We acknowledge that our current experiments do not directly validate performance under extreme label scarcity. While the graph-based framework is designed to leverage unlabeled data, we agree that experiments with systematically reduced label budgets would provide stronger evidence. Due to time and computational constraints, we could not complete these experiments for this revision. We have added this explicitly to the Future Work section.}
+    \AuthorResponse{We thank the reviewer for this important observation. We first want to clarify that the current experiments use full training datasets for only graph construction, not for transformer training.  We acknowledge that our current experiments do not directly validate performance under extreme label scarcity (approximately 80\% for now). While the graph-based framework is designed to leverage unlabeled data, we agree that experiments with systematically reduced label budgets would provide stronger evidence. Due to time and computational constraints, we could not complete these experiments for this revision. We have added this explicitly to the Future Work section.}
     \AutoRevision{2.1}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{ Review 2.2}
     \ReviewerText{Table 4 reports only training time overhead. Inference latency metrics must be provided to support scalability claims.}
-    \AuthorResponse{We thank the reviewer for this valuable point. We agree that inference latency measurements would strengthen RQ2. We have clarified that the GNN is discarded at inference time and added quantitative inference benchmarking as future work.}
-    \AutoRevision{2.2a,2.2b}
+    \AuthorResponse{We thank the reviewer for this valuable point. We agree that inference latency measurements would strengthen RQ2. We have added quantitative inference benchmarking as future work.}
+    \AutoRevision{2.2a}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{ Review 2.3}
@@ -256,7 +257,7 @@ We hope these revisions address all reviewer concerns and significantly improve 
 
 \begin{ReviewCycle}{ Review 3.4}
     \ReviewerText{Maintaining the full graph in memory may become difficult as repositories grow.}
-    \AuthorResponse{We thank the reviewer for this practical concern. We clarify that the GNN is used only during training, not inference. For even larger repositories, we discuss strategies in the expanded Future Work section.}
+    \AuthorResponse{We thank the reviewer for this practical concern. For even larger repositories, we discuss strategies in the expanded Future Work section.}
     \AutoRevision{3.4}
 \end{ReviewCycle}
 
@@ -266,22 +267,22 @@ We hope these revisions address all reviewer concerns and significantly improve 
     \AutoRevision{3.5}
 \end{ReviewCycle}
 
-\begin{ReviewCycle}{ Review 3.6}
-    \ReviewerText{Overlap between Introduction, Problem Description, and Related Work sections.}
-    \AuthorResponse{We thank the reviewer for this structural feedback. We have substantially revised Section 2 to focus on problem definition and motivation, reducing redundancy.}
-    \AutoRevision{3.6}
-\end{ReviewCycle}
-
-\begin{ReviewCycle}{ Review 3.7}
+\begin{ReviewCycle}{Review 3.6}
     \ReviewerText{Typos and awkward phrases, such as ``for example for example''.}
     \AuthorResponse{We thank the reviewer. We have corrected the duplicated phrase and reviewed the manuscript for similar issues.}
     \AutoRevision{3.7}
 \end{ReviewCycle}
 
-\begin{ReviewCycle}{ Review 3.8}
+\begin{ReviewCycle}{ Review 3.7}
     \ReviewerText{Results don't beat baselines; lack of cross-validation or statistical tests makes small differences unreliable.}
     \AuthorResponse{We thank the reviewer. We acknowledge both concerns: (1) our goal is competitive performance with unlabeled data leverage, and (2) lack of statistical rigor is a limitation. We have acknowledged this in Threats to Validity.}
     \AutoRevision{3.8}
+\end{ReviewCycle}
+
+\begin{ReviewCycle}{ Review 3.8}
+    \ReviewerText{Overlap between Introduction, Problem Description, and Related Work sections.}
+    \AuthorResponse{We thank the reviewer for this structural feedback. We have substantially revised Section 2 to focus on problem definition and motivation, reducing redundancy.}
+    \AutoRevision{4.1a, 4.1c, 4.1e, 4.1h}
 \end{ReviewCycle}
 
 % ==============================================================================
@@ -292,35 +293,24 @@ We hope these revisions address all reviewer concerns and significantly improve 
 \textbf{Overall Recommendation: Weak Accept}
 \bigskip
 
-\begin{ReviewCycle}{ Review 4.1}
-    \ReviewerText{Section 2 reads like methodology rather than problem definition and motivation.}
-    \AuthorResponse{We thank the reviewer for this structural critique. We have substantially revised Section 2 to focus on problem definition and technical motivation.}
-    \AutoRevision{3.1}
+\begin{ReviewCycle}{Review 4.1}
+    \ReviewerText{Some parts of the paper seem to be organized inappropriately; especially the Problem Description and Motivation section reads like a summary of the methodology.}
+    \AuthorResponse{We thank the reviewer for this structural critique. We have completely restructured Section 2 to clearly separate problem definition from methodology. It now has the following subsections to improve readability and semantic clarity:}
+    \AutoRevision{4.1a, 4.1c, 4.1e, 4.1h}
 \end{ReviewCycle}
 
 \begin{ReviewCycle}{ Review 4.2}
     \ReviewerText{Graph construction ignores descriptions, which may forgo significant data.}
     \AuthorResponse{We thank the reviewer. We acknowledge this limitation and have listed incorporating descriptions as future work.}
-    \AutoRevision{3.3}
+    \AutoRevision{4.2}
 \end{ReviewCycle}
 
-\begin{ReviewCycle}{ Reviews 4.3--4.10}
+\begin{ReviewCycle}{Review 4.3}
     \ReviewerText{Various formatting and terminological issues throughout the manuscript.}
-    \AuthorResponse{We thank the reviewer for meticulous attention to detail. We have systematically corrected all mentioned issues.}
-    \AutoRevision{4.5,4.6,3.6}
+    \AuthorResponse{We thank the reviewer for meticulous attention to detail. We have systematically corrected all mentioned issues. Some examples of the changes are listed below.}
+    \AutoRevision{4.3a, 4.3b, 4.3d, 4.3e, 4.3f, 4.3g}
 \end{ReviewCycle}
 
-\begin{ReviewCycle}{ Review 4.11}
-    \ReviewerText{Section 2 should include concrete examples of LLM failures and properly describe the DBRD problem.}
-    \AuthorResponse{We thank the reviewer. We have substantially revised Section 2 to include formal problem definition and concrete motivation with realistic scenarios.}
-    \AutoRevision{3.1,4.2}
-\end{ReviewCycle}
-
-\begin{ReviewCycle}{ Reviews 4.12--4.28}
-    \ReviewerText{Various additional issues: abbreviations, phrasing, figure references, early stopping details, and scalability discussions.}
-    \AuthorResponse{We thank the reviewer for the comprehensive list. We have systematically addressed all issues including clarifying early stopping criterion, adding figure references, and discussing distributed strategies.}
-    \AutoRevision{1.7,4.9,1.5,4.12,4.13,3.5}
-\end{ReviewCycle}
 
 
 
